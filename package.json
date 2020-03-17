@@ -1,0 +1,24 @@
+{
+  "name": "advanced-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel *.html --open",
+    "build": "parcel build *.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Indre101/Advanced-animation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Indre101/Advanced-animation/issues"
+  },
+  "homepage": "https://github.com/Indre101/Advanced-animation#readme"
+}
