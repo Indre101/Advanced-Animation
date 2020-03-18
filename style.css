@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.StoryContainer {
+  width: 90vw;
+  height: 70vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  text-align: center;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+h3 {
+  font-size: 2rem;
+}
