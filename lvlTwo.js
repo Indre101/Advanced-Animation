@@ -20,7 +20,7 @@ function init() {
 }
 
 function datacheck(data) {
-  showLevelInfo(data[2]);
+  data.forEach(showLevelInfo);
 }
 
 function showLevelInfo(story) {
@@ -29,7 +29,7 @@ function showLevelInfo(story) {
 
 function showParts(part) {
   const HTML = getHTMLElements();
-  // HTML.ImageContainer.innerHTML = " ";
+  HTML.ImageContainer.innerHTML = " ";
   HTML.UpperText.textContent = part.textUpper;
   HTML.Instructions.textContent = part.instruction;
   part.media.forEach(img => createImage(img, HTML));
@@ -37,6 +37,10 @@ function showParts(part) {
 
 function createImage(img, HTML) {
   const newImg = document.createElement("img");
-  newImg.src = `images/level-images/${img}`;
-  HTML.ImageContainer.appendChild(img);
+  newImg.setAttribute("src", `images/level-images/${img}`);
+  console.log(newImg);
+  // newImg.src = `images/level-images/${img}`;
+  console.log(HTML.ImageContainer);
+
+  HTML.ImageContainer.appendChild(newImg);
 }
