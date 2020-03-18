@@ -4,16 +4,17 @@ export function AppendImg(data) {
     ImageContainer.innerHTML = "";
     if (data[0].media.length > 0) {
       data[0].media.forEach(e => {
+        console.log(e);
         ImageContainer.innerHTML +=
           `<img data-what="img" class="IMGclicked click" src="images/level-images/` +
-          e +
+          e.src +
           `" alt=""></img>`;
       });
     } else {
       ImageContainer.innerHTML =
         `<img data-what="img" class="IMGclicked click" src="images/level-images/` +
-        data[0].media +
+        data[0].media[0].src +
         `" alt=""></img>`;
     }
-  }, 1000);
+  }, 500);
 }
