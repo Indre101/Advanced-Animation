@@ -1,9 +1,44 @@
 import { GetJsonData } from "./modules/ImportJson.js";
+import { AppendText } from "./modules/appendText.js";
+import { AppendImg } from "./modules/appendImg.js";
 
-document.addEventListener("DOMContentLoaded", datacheck);
+let Stage = 0;
+let Part = 0;
+document.addEventListener("DOMContentLoaded", datacheck(1, 0));
+document.addEventListener("DOMContentLoaded", listen);
 
 function datacheck() {
-  let level = 0;
-  const data = GetJsonData(level);
-  console.log(GetJsonData(level));
+  let data = GetJsonData(Stage, Part);
+  AppendText(data);
+  AppendImg(data);
+}
+
+function moveForwards() {
+  let where = GetJsonData(Stage);
+  let howMany = GetJsonData();
+  console.log(howMany);
+  setTimeout(() => {
+    if (Part + 1 < where[0].parts.length) {
+      Part++;
+      datacheck();
+    } else if (Stage == 3 && Part + 1 == where[0].parts.length) {
+      document.querySelector(".Instructions").textContent = "";
+    } else {
+      Part = 0;
+      Stage++;
+      datacheck();
+    }
+  }, 50);
+}
+
+let clickFunc = function() {
+  if (this.dataset.what == "bottom" || this.dataset.what == "img") {
+    moveForwards();
+  }
+};
+function listen() {
+  const element = document.querySelectorAll(".click");
+  element.forEach(e => {
+    e.addEventListener("click", (e = clickFunc));
+  });
 }

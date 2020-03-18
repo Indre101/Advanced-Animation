@@ -1,9 +1,15 @@
-export let GetJsonData = index => {
-  let dataValues = [];
+export function GetJsonData(index, part) {
+  let Array = [];
   fetch("data/data.json")
     .then(res => res.json())
     .then(data => {
-      dataValues.push(data[index]);
+      if (part == null) {
+        Array.push(data[index]);
+      } else if (index == null) {
+        Array.push(data);
+      } else {
+        Array.push(data[index].parts[part]);
+      }
     });
-  return dataValues;
-};
+  return Array;
+}
