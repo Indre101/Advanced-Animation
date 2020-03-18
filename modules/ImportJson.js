@@ -1,8 +1,9 @@
-export function GetJsonData(index) {
-  fetch("data.json")
+export let GetJsonData = index => {
+  let dataValues = [];
+  fetch("data/data.json")
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      return data;
+      dataValues.push(data[index]);
     });
-}
+  return dataValues;
+};

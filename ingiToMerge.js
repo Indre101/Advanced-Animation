@@ -1,5 +1,9 @@
 import { GetJsonData } from "./modules/ImportJson.js";
+
 document.addEventListener("DOMContentLoaded", datacheck);
+
 function datacheck() {
-  console.log(GetJsonData());
+  let level = 0;
+  const data = GetJsonData(level);
+  console.log(GetJsonData(level));
 }
