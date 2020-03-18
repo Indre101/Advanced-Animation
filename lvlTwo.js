@@ -21,6 +21,7 @@ function init() {
 
 function datacheck(data) {
   data.forEach(showLevelInfo);
+  // showLevelInfo(data[2]);
 }
 
 function showLevelInfo(story) {
@@ -37,10 +38,6 @@ function showParts(part) {
 
 function createImage(img, HTML) {
   const newImg = document.createElement("img");
-  newImg.setAttribute("src", `images/level-images/${img}`);
-  console.log(newImg);
-  // newImg.src = `images/level-images/${img}`;
-  console.log(HTML.ImageContainer);
-
+  newImg.src = `images/level-images/${img}`;
   HTML.ImageContainer.appendChild(newImg);
 }
