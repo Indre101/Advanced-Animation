@@ -45,7 +45,7 @@ function createImage(img, HTML) {
   newImg.src = `images/level-images/${img.src}`;
   if (img.draggable === true) {
     newImg.dataset.drag = "true";
-    newImg.setProperty("draggable", true);
+    newImg.setAttribute("draggable", true);
   }
   HTML.ImageContainer.appendChild(newImg);
 }
