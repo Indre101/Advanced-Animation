@@ -23,3 +23,8 @@ body {
 h3 {
   font-size: 2rem;
 }
+.ImageContainer img {
+  width: 20vw;
+
+  height: auto;
+}
