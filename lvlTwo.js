@@ -15,17 +15,20 @@ function init() {
   fetch("data/data.json")
     .then(res => res.json())
     .then(data => {
-      datacheck(data);
+      getData(data);
     });
 }
 
-function datacheck(data) {
-  data.forEach(showLevelInfo);
-  // showLevelInfo(data[2]);
+function getData(data) {
+  // data.forEach(showLevelInfo);
+  showLevelInfo(data[2]);
 }
 
 function showLevelInfo(story) {
-  story.parts.forEach(showParts);
+  // story.parts[2].forEach(showParts);
+  console.log(story.parts);
+
+  showParts(story.parts[2]);
 }
 
 function showParts(part) {
@@ -37,7 +40,12 @@ function showParts(part) {
 }
 
 function createImage(img, HTML) {
+  console.log(img);
   const newImg = document.createElement("img");
-  newImg.src = `images/level-images/${img}`;
+  newImg.src = `images/level-images/${img.src}`;
+  if (img.draggable === true) {
+    newImg.dataset.drag = "true";
+    newImg.setProperty("draggable", true);
+  }
   HTML.ImageContainer.appendChild(newImg);
 }
