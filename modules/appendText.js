@@ -5,5 +5,5 @@ export let AppendText = function(data) {
   setTimeout(() => {
     upperText.textContent = data[0].textUpper;
     bottomText.textContent = data[0].instruction;
-  }, 1000);
+  }, 500);
 };
