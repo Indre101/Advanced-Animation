@@ -17,13 +17,18 @@
       },
       {
         "id": "lvl1-p3",
-        "media": ["axe.svg", "woodPiece.svg"],
+        "media": [
+          "axe-2.svg",
+          "woodPiece.svg",
+          "woodChopped-1.svg",
+          "woodChopped-2.svg"
+        ],
         "textUpper": "Firewood would be cut to smaller pieces for Easier fire ignition",
         "instruction": "Cut the firewood"
       },
       {
         "id": "lvl1-p4",
-        "media": ["stick.svg"],
+        "media": ["stick.svg", "woodChopped-1.svg", "woodChopped-2.svg"],
         "textUpper": "Firewood and stick acquired",
         "instruction": "Pick up the stick to continue"
       },
