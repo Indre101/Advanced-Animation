@@ -1,5 +1,5 @@
-export function GetJsonData() {
-  fetch("../static/data.json")
+export function GetJsonData(index) {
+  fetch("data.json")
     .then(res => res.json())
     .then(data => {
       console.log(data);
