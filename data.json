@@ -23,7 +23,7 @@
       },
       {
         "id": "lvl1-p4",
-        "media": [""],
+        "media": ["stick.svg"],
         "textUpper": "Firewood and stick acquired",
         "instruction": "Pick up the stick to continue"
       },
@@ -69,6 +69,31 @@
         "id": "lvl1-p4",
         "media": ["oilLamp.svg"],
         "textUpper": "Oil lamps burned cleaner, with less smoke, than candles and other sources of light before electricity.",
+        "instruction": "Next"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "name": "Light bulb",
+    "parts": [
+      {
+        "id": "lvl3-p1",
+        "media": ["light-bulb.svg", "switch-1.svg"],
+        "textUpper": "A light bulb is also known as an incandescent light bulb, incandescent lam or an incandescent light globe. The average lifetime of a household light bulb is around 1,000 hours.",
+        "instruction": "Tap on the switch to turn on the light bulb"
+      },
+      {
+        "id": "lvl3-p2",
+        "media": ["light-bulb.svg", "switch-2.svg"],
+        "textUpper": "A light bulb is also known as an incandescent light bulb, incandescent lam or an incandescent light globe. The average lifetime of a household light bulb is around 1,000 hours.",
+        "instruction": "Next"
+      },
+      {
+        "id": "lvl3-p3",
+        "media": ["phoneman.svg"],
+        "textUpper": "Nowadays we have light wherever we go",
         "instruction": "Next"
       }
     ]
