@@ -1,17 +1,10 @@
 import { GetJsonData } from "./modules/ImportJson.js";
-import { gsap } from "gsap";
 import interact from "interactjs";
 
 // enable draggables to be dropped into this
-const ImageContainer = document.querySelector(".dropzone");
+const ImageContainer = document.querySelector(".ImageContainer");
 
-interact(".item").draggable({
-  modifiers: [
-    interact.modifiers.restrict({
-      restriction: ImageContainer,
-      endOnly: true
-    })
-  ],
+interact(".draggableItem").draggable({
   listeners: {
     // call this function on every dragmoveevent
     move: dragMoveListener
@@ -35,33 +28,37 @@ function dragMoveListener(event) {
 
 interact(".dropzone").dropzone({
   // only accept elements matching this CSS selector
-  accept: ".item",
+  accept: ".draggableItem",
   // Require a 75% element overlap for a drop to be possible
   overlap: 0.75,
 
   // listen for drop related events:
 
-  ondropactivate: function(event) {
-    // add active dropzone feedback
-    event.target.classList.add("drop-active");
-  },
   ondragenter: function(event) {
-    var draggableElement = event.relatedTarget;
-    var dropzoneElement = event.target;
-
     // feedback the possibility of a drop
-    dropzoneElement.classList.add("drop-target");
-    draggableElement.classList.add("can-drop");
+    event.target.dataset.moving = "hovering";
   },
+
   ondragleave: function(event) {
     // remove the drop feedback style
-    event.target.classList.remove("drop-target");
-    event.relatedTarget.classList.remove("can-drop");
+    event.target.dataset.moving = "activeMoving";
+
+    // event.target.dataset.moving = " ";
+    // event.relatedTarget.classList.remove("can-drop");
   },
-  ondrop: function(event) {},
-  ondropdeactivate: function(event) {
-    // remove active dropzone feedback
-    event.target.classList.remove("drop-active");
-    event.target.classList.remove("drop-target");
+
+  ondrop: function(event) {
+    console.log(event.target);
+    event.target.dataset.moving = "dropped";
+  },
+
+  // ondropdeactivate: function(event) {
+  //   // remove active dropzone feedback
+  //   event.target.dataset.moving = "activeMoving";
+  // },
+
+  ondropactivate: function(event) {
+    event.target.dataset.moving = "activeMoving";
+    // add active dropzone feedback
   }
 });
