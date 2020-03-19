@@ -1,15 +1,11 @@
-export function GetJsonData(index, part) {
-  let Array = [];
-  fetch("data/data.json")
-    .then(res => res.json())
-    .then(data => {
-      if (part == null) {
-        Array.push(data[index]);
-      } else if (index == null) {
-        Array.push(data);
-      } else {
-        Array.push(data[index].parts[part]);
-      }
-    });
-  return Array;
+export async function GetJsonData(index, part) {
+  const response = await fetch("data/data.json");
+  const json = await response.json();
+  if (part == null) {
+    return [json[index]];
+  } else if (index == null) {
+    return [parts[part]];
+  } else {
+    return [json[index].parts[part]];
+  }
 }
