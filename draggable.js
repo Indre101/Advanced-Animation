@@ -50,6 +50,7 @@ interact(".dropzone").dropzone({
   ondrop: function(event) {
     console.log(event.target);
     event.target.dataset.moving = "dropped";
+    interact(".draggableItem").unset();
   },
 
   // ondropdeactivate: function(event) {
