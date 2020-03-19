@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "d3-drag": "^1.2.5",
+    "d3-selection": "^1.4.1",
     "gsap": "^3.2.4",
     "parcel-bundler": "^1.12.4"
   },
