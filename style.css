@@ -22,7 +22,11 @@ body {
 h3 {
   font-size: 2rem;
 }
-
+.svgContainer image {
+  width: 10%;
+  height: 50%;
+  object-fit: contain;
+}
 img {
   width: 10%;
   height: 50%;
