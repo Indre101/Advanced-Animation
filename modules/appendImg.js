@@ -6,7 +6,7 @@ export function AppendImg(data) {
       "http://www.w3.org/2000/svg",
       "svg"
     );
-    svgCon.setAttribute("viewBox", "0 0 300 300");
+    svgCon.setAttribute("viewBox", "0 0 100 100");
     svgCon.setAttribute("class", "svgContainer");
     ImageContainer.appendChild(svgCon);
     if (data[0].media.length > 0) {
