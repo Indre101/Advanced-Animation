@@ -3,15 +3,17 @@ import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
 let Stage = 0;
 let Part = 0;
-document.addEventListener("DOMContentLoaded", datacheck(1, 0));
+document.addEventListener("DOMContentLoaded", datacheck(0, 0));
 document.addEventListener("DOMContentLoaded", listen);
-function datacheck() {
-  let data = GetJsonData(Stage, Part);
+async function datacheck(Stages, Parts) {
+  const data = await GetJsonData(Stage, Part);
+  console.log(Stage, Part);
   AppendText(data);
   AppendImg(data);
 }
-function moveForwards() {
-  let where = GetJsonData(Stage);
+async function moveForwards() {
+  let where = await GetJsonData(Stage);
+  console.log(where);
   setTimeout(() => {
     if (Part + 1 < where[0].parts.length) {
       Part++;
