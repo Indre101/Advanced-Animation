@@ -1,27 +1,58 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { gsap } from "gsap";
-import d3 from "d3-drag";
-const sth = document.querySelector(".dargableObject");
+import interact from "interactjs";
 
-const div = d3.selectAll("div");
-console.log(div);
+// enable draggables to be dropped into this
+interact(".dropzone").dropzone({
+  // only accept elements matching this CSS selector
+  accept: "#yes-drop",
+  // Require a 75% element overlap for a drop to be possible
+  overlap: 0.75,
 
-// function started() {
-//   console.log(d3);
-//   const elementNew = d3.select(".dargableObject").classed("dragging", true);
+  // listen for drop related events:
 
-//   d3.event.on("drag", dragged).on("end", ended);
+  ondropactivate: function(event) {
+    // add active dropzone feedback
+    event.target.classList.add("drop-active");
+  },
+  ondragenter: function(event) {
+    var draggableElement = event.relatedTarget;
+    var dropzoneElement = event.target;
 
-//   function dragged(d) {
-//     console.log("object");
-//   }
+    // feedback the possibility of a drop
+    dropzoneElement.classList.add("drop-target");
+    draggableElement.classList.add("can-drop");
+    draggableElement.textContent = "Dragged in";
+  },
+  ondragleave: function(event) {
+    // remove the drop feedback style
+    event.target.classList.remove("drop-target");
+    event.relatedTarget.classList.remove("can-drop");
+    event.relatedTarget.textContent = "Dragged out";
+  },
+  ondrop: function(event) {
+    event.relatedTarget.textContent = "Dropped";
+  },
+  ondropdeactivate: function(event) {
+    // remove active dropzone feedback
+    event.target.classList.remove("drop-active");
+    event.target.classList.remove("drop-target");
+  }
+});
 
-//   function ended() {
-//     console.log("object");
-//   }
-// }
+interact(".drag-drop").draggable({
+  inertia: true,
+  modifiers: [
+    interact.modifiers.restrictRect({
+      restriction: "parent",
+      endOnly: true
+    })
+  ],
+  autoScroll: true,
+  // dragMoveListener from the dragging demo above
+  listeners: { move: dragMoveListener }
+});
 
-// started();
 // document.addEventListener("DOMContentLoaded", init);
 
 // function getHTMLElements() {
