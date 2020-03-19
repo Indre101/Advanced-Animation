@@ -1,6 +1,8 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
+import { DraggElement } from "./modules/Draggable";
+
 let Stage = 0;
 let Part = 0;
 document.addEventListener("DOMContentLoaded", datacheck(0, 0));
@@ -28,6 +30,7 @@ async function moveForwards() {
   }, 50);
 }
 let clickFunc = function() {
+  DraggElement();
   if (this.dataset.what == "bottom" || this.dataset.what == "img") {
     moveForwards();
   }

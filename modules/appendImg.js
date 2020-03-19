@@ -1,30 +1,53 @@
+import interact from "interactjs";
+
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
   ImageContainer.innerHTML = "";
-  const svgCon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svgCon.setAttribute("viewBox", "0 0 300 300");
-  svgCon.setAttribute("class", "svgContainer");
-  ImageContainer.appendChild(svgCon);
+
   if (data[0].media.length > 0) {
     data[0].media.forEach(e => {
-      const svgimg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "image"
-      );
-      svgimg.setAttribute("class", "IMGclicked click");
-      svgimg.setAttribute("href", `images/level-images/` + e.src + ``);
-      svgCon.appendChild(svgimg);
+      createSvg(e, ImageContainer);
     });
   } else {
-    const svgimg = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "image"
-    );
-    svgimg.setAttribute("class", "IMGclicked click");
-    svgimg.setAttribute(
-      "href",
-      `images/level-images/` + data[0].media[0].src + ``
-    );
-    svgCon.appendChild(svgimg);
+    createSvg(data[0].media[0], ImageContainer);
   }
 };
+
+async function createSvg(img, container) {
+  const parent = document.createElement("div");
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  // Append timeline  to a div
+  const responseSvg = await fetch(`images/level-images/${img.src}`);
+  const svgText = await responseSvg.text();
+  // svg.setAttribute("href", `images/level-images/${img}`);
+  svg.setAttribute("class", "IMGclicked click");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("class", "svgContainer");
+  svg.innerHTML = svgText;
+  img.draggable
+    ? createDraggableContainer(svg, parent, container, img)
+    : createNONContainer(parent);
+  parent.appendChild(svg);
+
+  container.appendChild(parent);
+}
+
+function createDraggableContainer(createdSvg, parent, container, img) {
+  parent.classList.add("movableitemContainer");
+  createdSvg.classList.add("draggableItem");
+  createDropZone(img, container);
+}
+
+async function createDropZone(img, container) {
+  console.log(img);
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const responseSvg = await fetch(`images/level-images/${img.src}`);
+  const svgText = await responseSvg.text();
+  svg.innerHTML = svgText;
+  svg.classList.add("dropzone");
+  container.appendChild(svg);
+}
+
+function createNONContainer(parent) {
+  parent.classList.add("NOTmovableitemContainer");
+}

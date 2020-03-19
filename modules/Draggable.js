@@ -1,16 +1,15 @@
-import { GetJsonData } from "./modules/ImportJson.js";
 import interact from "interactjs";
 
 // enable draggables to be dropped into this
-const ImageContainer = document.querySelector(".ImageContainer");
 
-interact(".draggableItem").draggable({
-  listeners: {
-    // call this function on every dragmoveevent
-    move: dragMoveListener
-  }
-});
-
+export function DraggElement() {
+  interact(".draggableItem").draggable({
+    listeners: {
+      // call this function on every dragmoveevent
+      move: dragMoveListener
+    }
+  });
+}
 function dragMoveListener(event) {
   const target = event.target;
   // keep the dragged position in the data-x/data-y attributes
