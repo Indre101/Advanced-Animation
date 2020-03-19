@@ -1,16 +1,29 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { gsap } from "gsap";
-gsap.registerPlugin(Draggable, InertiaPlugin);
+import dragula from "dragula";
 
-const images = document.querySelector("svg");
+// dragula([
+//   document.getElementById("testimg"),
+//   document.getElementById("testimgTwo")
+// ]);
 
-Draggable.create("#Layer_1", {
-  type: "x,y",
-  bounds: "body",
-  overshootTolerance: 0,
-  inertia: true
-});
-
+dragula([
+  document.getElementById("containerOne"),
+  document.getElementById("containerThree")
+])
+  .on("drag", function(el) {
+    console.log("object");
+    el.className = el.className.replace("ex-moved", "");
+  })
+  .on("drop", function(el) {
+    el.className += " ex-moved";
+  })
+  .on("over", function(el, container) {
+    container.className += " ex-over";
+  })
+  .on("out", function(el, container) {
+    container.className = container.className.replace("ex-over", "");
+  });
 // document.addEventListener("DOMContentLoaded", init);
 
 // function getHTMLElements() {
