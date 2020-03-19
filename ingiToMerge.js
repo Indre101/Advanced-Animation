@@ -9,13 +9,11 @@ document.addEventListener("DOMContentLoaded", datacheck(0, 0));
 document.addEventListener("DOMContentLoaded", listen);
 async function datacheck(Stages, Parts) {
   const data = await GetJsonData(Stage, Part);
-  console.log(Stage, Part);
   AppendText(data);
   AppendImg(data);
 }
 async function moveForwards() {
   let where = await GetJsonData(Stage);
-  console.log(where);
   setTimeout(() => {
     if (Part + 1 < where[0].parts.length) {
       Part++;
