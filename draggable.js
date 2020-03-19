@@ -1,23 +1,27 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { gsap } from "gsap";
 import d3 from "d3-drag";
+const sth = document.querySelector(".dargableObject");
 
-function started() {
-  var circle = d3.select(this).classed("dragging", true);
+const div = d3.selectAll("div");
+console.log(div);
 
-  d3.event.on("drag", dragged).on("end", ended);
+// function started() {
+//   console.log(d3);
+//   const elementNew = d3.select(".dargableObject").classed("dragging", true);
 
-  function dragged(d) {
-    circle
-      .raise()
-      .attr("cx", (d.x = d3.event.x))
-      .attr("cy", (d.y = d3.event.y));
-  }
+//   d3.event.on("drag", dragged).on("end", ended);
 
-  function ended() {
-    circle.classed("dragging", false);
-  }
-}
+//   function dragged(d) {
+//     console.log("object");
+//   }
+
+//   function ended() {
+//     console.log("object");
+//   }
+// }
+
+// started();
 // document.addEventListener("DOMContentLoaded", init);
 
 // function getHTMLElements() {
