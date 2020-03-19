@@ -3,7 +3,6 @@ import interact from "interactjs";
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
   ImageContainer.innerHTML = "";
-
   if (data[0].media.length > 0) {
     data[0].media.forEach(e => {
       createSvg(e, ImageContainer);
@@ -20,21 +19,21 @@ async function createSvg(img, container) {
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
   // svg.setAttribute("href", `images/level-images/${img}`);
-  svg.setAttribute("class", "IMGclicked click");
+  svg.setAttribute("class", `IMGclicked click`);
   svg.setAttribute("viewBox", "0 0 300 300");
   svg.setAttribute("class", "svgContainer");
+  svg.dataset.name = img.src.substring(0, img.src.length - 4);
   svg.innerHTML = svgText;
   img.draggable
     ? createDraggableContainer(svg, parent, container, img)
     : createNONContainer(parent);
   parent.appendChild(svg);
-
   container.appendChild(parent);
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
   parent.classList.add("movableitemContainer");
-  createdSvg.classList.add("draggableItem");
+  createdSvg.classList.add(`draggableItem`);
   createDropZone(img, container);
 }
 
