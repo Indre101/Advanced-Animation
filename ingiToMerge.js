@@ -1,22 +1,17 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
-
 let Stage = 0;
 let Part = 0;
 document.addEventListener("DOMContentLoaded", datacheck(1, 0));
 document.addEventListener("DOMContentLoaded", listen);
-
 function datacheck() {
   let data = GetJsonData(Stage, Part);
   AppendText(data);
   AppendImg(data);
 }
-
 function moveForwards() {
   let where = GetJsonData(Stage);
-  let howMany = GetJsonData();
-  console.log(howMany);
   setTimeout(() => {
     if (Part + 1 < where[0].parts.length) {
       Part++;
@@ -30,7 +25,6 @@ function moveForwards() {
     }
   }, 50);
 }
-
 let clickFunc = function() {
   if (this.dataset.what == "bottom" || this.dataset.what == "img") {
     moveForwards();

@@ -2,19 +2,34 @@ export function AppendImg(data) {
   const ImageContainer = document.querySelector(".ImageContainer");
   setTimeout(() => {
     ImageContainer.innerHTML = "";
+    const svgCon = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg"
+    );
+    svgCon.setAttribute("viewBox", "0 0 300 300");
+    svgCon.setAttribute("class", "svgContainer");
+    ImageContainer.appendChild(svgCon);
     if (data[0].media.length > 0) {
       data[0].media.forEach(e => {
-        console.log(e);
-        ImageContainer.innerHTML +=
-          `<img data-what="img" class="IMGclicked click" src="images/level-images/` +
-          e.src +
-          `" alt=""></img>`;
+        const svgimg = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "image"
+        );
+        svgimg.setAttribute("class", "IMGclicked click");
+        svgimg.setAttribute("href", `images/level-images/` + e.src + ``);
+        svgCon.appendChild(svgimg);
       });
     } else {
-      ImageContainer.innerHTML =
-        `<img data-what="img" class="IMGclicked click" src="images/level-images/` +
-        data[0].media[0].src +
-        `" alt=""></img>`;
+      const svgimg = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "image"
+      );
+      svgimg.setAttribute("class", "IMGclicked click");
+      svgimg.setAttribute(
+        "href",
+        `images/level-images/` + data[0].media[0].src + ``
+      );
+      svgCon.appendChild(svgimg);
     }
   }, 500);
 }
