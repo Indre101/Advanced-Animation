@@ -1,6 +1,23 @@
 import { GetJsonData } from "./modules/ImportJson.js";
 import { gsap } from "gsap";
+import d3 from "d3-drag";
 
+function started() {
+  var circle = d3.select(this).classed("dragging", true);
+
+  d3.event.on("drag", dragged).on("end", ended);
+
+  function dragged(d) {
+    circle
+      .raise()
+      .attr("cx", (d.x = d3.event.x))
+      .attr("cy", (d.y = d3.event.y));
+  }
+
+  function ended() {
+    circle.classed("dragging", false);
+  }
+}
 // document.addEventListener("DOMContentLoaded", init);
 
 // function getHTMLElements() {
