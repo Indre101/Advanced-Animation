@@ -3,9 +3,39 @@ import { gsap } from "gsap";
 import interact from "interactjs";
 
 // enable draggables to be dropped into this
+const ImageContainer = document.querySelector(".dropzone");
+
+interact(".item").draggable({
+  modifiers: [
+    interact.modifiers.restrict({
+      restriction: ImageContainer,
+      endOnly: true
+    })
+  ],
+  listeners: {
+    // call this function on every dragmoveevent
+    move: dragMoveListener
+  }
+});
+
+function dragMoveListener(event) {
+  const target = event.target;
+  // keep the dragged position in the data-x/data-y attributes
+  const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+  const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+  // translate the element
+  target.style.webkitTransform = target.style.transform =
+    "translate(" + x + "px, " + y + "px)";
+
+  // update the posiion attributes
+  target.setAttribute("data-x", x);
+  target.setAttribute("data-y", y);
+}
+
 interact(".dropzone").dropzone({
   // only accept elements matching this CSS selector
-  accept: "#yes-drop",
+  accept: ".item",
   // Require a 75% element overlap for a drop to be possible
   overlap: 0.75,
 
@@ -22,81 +52,16 @@ interact(".dropzone").dropzone({
     // feedback the possibility of a drop
     dropzoneElement.classList.add("drop-target");
     draggableElement.classList.add("can-drop");
-    draggableElement.textContent = "Dragged in";
   },
   ondragleave: function(event) {
     // remove the drop feedback style
     event.target.classList.remove("drop-target");
     event.relatedTarget.classList.remove("can-drop");
-    event.relatedTarget.textContent = "Dragged out";
   },
-  ondrop: function(event) {
-    event.relatedTarget.textContent = "Dropped";
-  },
+  ondrop: function(event) {},
   ondropdeactivate: function(event) {
     // remove active dropzone feedback
     event.target.classList.remove("drop-active");
     event.target.classList.remove("drop-target");
   }
 });
-
-interact(".drag-drop").draggable({
-  inertia: true,
-  modifiers: [
-    interact.modifiers.restrictRect({
-      restriction: "parent",
-      endOnly: true
-    })
-  ],
-  autoScroll: true,
-  // dragMoveListener from the dragging demo above
-  listeners: { move: dragMoveListener }
-});
-
-// document.addEventListener("DOMContentLoaded", init);
-
-// function getHTMLElements() {
-//   const HTML = {};
-//   HTML.StoryContainer = document.querySelector(".StoryContainer");
-//   HTML.Story = document.querySelector(".Story");
-//   HTML.UpperText = document.querySelector(".UpperText");
-//   HTML.ImageContainer = document.querySelector(".ImageContainer");
-//   HTML.Instructions = document.querySelector(".Instructions");
-//   return HTML;
-// }
-
-// function init() {
-//   fetch("data/data.json")
-//     .then(res => res.json())
-//     .then(data => {
-//       getData(data);
-//     });
-// }
-
-// function getData(data) {
-//   // data.forEach(showLevelInfo);
-//   showLevelInfo(data[2]);
-// }
-
-// function showLevelInfo(story) {
-//   // story.parts[2].forEach(showParts);
-//   console.log(story.parts);
-
-//   showParts(story.parts[2]);
-// }
-
-// function showParts(part) {
-//   const HTML = getHTMLElements();
-//   HTML.ImageContainer.innerHTML = " ";
-//   HTML.UpperText.textContent = part.textUpper;
-//   HTML.Instructions.textContent = part.instruction;
-//   part.media.forEach(img => createImage(img, HTML));
-// }
-
-// function createImage(img, HTML) {
-//   console.log(img);
-//   const newImg = document.createElement("img");
-//   newImg.src = `images/level-images/${img.src}`;
-
-//   HTML.ImageContainer.appendChild(newImg);
-// }

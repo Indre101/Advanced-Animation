@@ -42,6 +42,7 @@ h3 {
   margin: 10px auto 30px;
   padding: 10px;
   width: 80%;
+  height: 300px;
   transition: background-color 0.3s;
 }
 
