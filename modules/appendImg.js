@@ -3,6 +3,7 @@ import interact from "interactjs";
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
   ImageContainer.innerHTML = "";
+  ImageContainer.dataset.chapter = data[0].id;
   if (data[0].media.length > 0) {
     data[0].media.forEach(e => {
       createSvg(e, ImageContainer);
