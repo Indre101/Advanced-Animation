@@ -32,6 +32,7 @@ let clickFunc = function() {
   DraggElement();
 
   if (this.dataset.what == "bottom" || this.dataset.what == "img") {
+    console.log(this);
     moveForwards();
   }
 };

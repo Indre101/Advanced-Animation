@@ -30,7 +30,7 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
-  DrawSvg();
+  addAnimation();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
@@ -52,16 +52,9 @@ function createNONContainer(parent) {
   parent.classList.add("NOTmovableitemContainer");
 }
 
-function DrawSvg() {
-  if (document.querySelector("svg .cls-1")) {
-    const svgsPaths = document.querySelectorAll("svg .cls-1");
-    console.log(svgsPaths);
-    svgsPaths.forEach(pathItem => {
-      const length = pathItem.getTotalLength();
-      pathItem.style.setProperty("--length", length);
-      pathItem.style.setProperty("--dash-array", length);
-    });
-  } else {
-    return false;
+function addAnimation() {
+  if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
+    document.querySelector("#lamp_x5F_lid").dataset.lifted = "true";
+    console.log(document.querySelector("#lamp_x5F_lid"));
   }
 }
