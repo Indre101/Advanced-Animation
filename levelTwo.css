@@ -1,4 +1,4 @@
-#lamp_x5F_lid[data-lifted="true"] {
+#lamp_lid[data-lifted="true"] {
   animation: liftTheLid 0.3s 0.5s ease-in-out 1;
   transform-origin: bottom;
 }
@@ -7,4 +7,32 @@
   100% {
     transform: translateY(-10vw);
   }
+}
+
+#light {
+  display: none;
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
+  animation: transformLvl2 0.5s ease-in-out forwards 1;
+}
+
+@keyframes transformLvl2 {
+  100% {
+    transform: translate(-100%, -100%);
+  }
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer {
+  animation: transformLvl2Lamp 0.5s ease-in-out forwards 1;
+}
+
+@keyframes transformLvl2Lamp {
+  100% {
+    transform: translate(30%, 52%);
+  }
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .dropzone {
+  transform: translate(60%, 160%);
 }

@@ -42,17 +42,16 @@ h3 {
   height: 55vh;
   position: relative;
 }
+
 .ImageContainer div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .movableitemContainer {
   width: 15vw;
-  grid-area: 1/1 / span 1 / span 1;
-  order: -1;
-  align-self: flex-start;
 }
 
 .movableitemContainer svg {
@@ -68,11 +67,9 @@ h3 {
   height: 100%;
 }
 .dropzone {
-  width: 10vw;
+  width: 15vw;
   transition: filter 0.3s, opacity 0.3s;
   opacity: 0;
-  height: fit-content;
-  align-self: center;
 }
 
 .dropzone[data-moving="hovering"] {

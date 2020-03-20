@@ -30,7 +30,6 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
-  addAnimation();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
@@ -52,9 +51,9 @@ function createNONContainer(parent) {
   parent.classList.add("NOTmovableitemContainer");
 }
 
-function addAnimation() {
+function addAnimationToTheLampLid() {
   if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
-    document.querySelector("#lamp_x5F_lid").dataset.lifted = "true";
-    console.log(document.querySelector("#lamp_x5F_lid"));
+    document.querySelector("#lamp_lid").dataset.lifted = "true";
+    console.log(document.querySelector("#lamp_lid"));
   }
 }

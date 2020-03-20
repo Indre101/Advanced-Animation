@@ -84,7 +84,7 @@
           { "src": "flask.svg", "draggable": true }
         ],
         "textUpper": "An oil lamp is an object used to produce light continuously for a period of time using an oil-based fuel source.",
-        "instruction": "Tap on the flask to fill the lamp"
+        "instruction": "Drag the flask to the lamp to fill it"
       },
       {
         "id": "lvl2-p3",

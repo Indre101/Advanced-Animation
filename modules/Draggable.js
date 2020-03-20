@@ -1,5 +1,5 @@
 import interact from "interactjs";
-
+import gsap from "gsap";
 // enable draggables to be dropped into this
 
 export function DraggElement() {
@@ -50,6 +50,7 @@ interact(".dropzone").dropzone({
     console.log(event.target);
     event.target.dataset.moving = "dropped";
     interact(".draggableItem").unset();
+    fillTheLamp();
   },
 
   // ondropdeactivate: function(event) {
@@ -62,3 +63,10 @@ interact(".dropzone").dropzone({
     // add active dropzone feedback
   }
 });
+
+function fillTheLamp() {
+  const flask = document.querySelector("#lamp #fill");
+  console.log(flask);
+  // gsap.to(flask, 5, { fill: "rgb(255,0,255)" });
+  gsap.to(flask, 2, { fill: "rgb(255,0,255)", ease: Linear.easeNone });
+}
