@@ -1,53 +1,39 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  height: 100vh;
-  width: 100vw;
-}
-
-.Story {
-  width: 90vw;
-  height: 70vh;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 10vh 55vh 10vh;
-  text-align: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-h3 {
-  font-size: 3vh;
-}
-
-.svgContainer {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/*  */
-
-.drop-target {
-  opacity: 0.7;
-
-  filter: drop-shadow(1px 1px 3px darkgrey);
-}
-
 .ImageContainer {
   width: 100%;
   height: 55vh;
   position: relative;
 }
+
 .ImageContainer div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+svg .st0 {
+  --length: 0;
+  --dash-array: 0;
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--dash-array);
+  animation: animate-dash 3s linear alternate infinite;
+}
+
+@keyframes animate-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .movableitemContainer {
   width: 10vw;
   grid-area: 1/1 / span 1 / span 1;
@@ -59,7 +45,8 @@ h3 {
   z-index: 10000;
 }
 .NOTmovableitemContainer {
-  width: 15vw;
+  width: 100%;
+  height: 100%;
 }
 
 .dropzone {

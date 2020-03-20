@@ -30,6 +30,7 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
+  DrawSvg();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
@@ -39,7 +40,6 @@ function createDraggableContainer(createdSvg, parent, container, img) {
 }
 
 async function createDropZone(img, container) {
-  console.log(img);
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
@@ -50,4 +50,18 @@ async function createDropZone(img, container) {
 
 function createNONContainer(parent) {
   parent.classList.add("NOTmovableitemContainer");
+}
+
+function DrawSvg() {
+  if (document.querySelector("svg .cls-1")) {
+    const svgsPaths = document.querySelectorAll("svg .cls-1");
+    console.log(svgsPaths);
+    svgsPaths.forEach(pathItem => {
+      const length = pathItem.getTotalLength();
+      pathItem.style.setProperty("--length", length);
+      pathItem.style.setProperty("--dash-array", length);
+    });
+  } else {
+    return false;
+  }
 }

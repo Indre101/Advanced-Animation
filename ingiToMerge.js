@@ -23,16 +23,19 @@ async function moveForwards() {
     } else {
       Part = 0;
       Stage++;
+
       datacheck();
     }
   }, 50);
 }
 let clickFunc = function() {
   DraggElement();
+
   if (this.dataset.what == "bottom" || this.dataset.what == "img") {
     moveForwards();
   }
 };
+
 function listen() {
   const element = document.querySelectorAll(".click");
   element.forEach(e => {
