@@ -39,14 +39,12 @@ function createDraggableContainer(createdSvg, parent, container, img) {
 }
 
 async function createDropZone(img, container) {
-  const parent = document.createElement("div");
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
   svg.innerHTML = svgText;
-  parent.classList.add("dropzone");
-  parent.appendChild(svg);
-  container.appendChild(parent);
+  svg.classList.add("dropzone");
+  container.appendChild(svg);
 }
 
 function createNONContainer(parent) {

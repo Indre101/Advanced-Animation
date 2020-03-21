@@ -13,13 +13,17 @@
   display: none;
 }
 
+.ImageContainer[data-chapter="lvl2-p2"] {
+  --width: 100px;
+}
+
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
   animation: transformLvl2 0.5s ease-in-out forwards 1;
 }
 
 @keyframes transformLvl2 {
   100% {
-    transform: translate(-25vw, -20vh);
+    transform: translate(-200px, -200px);
   }
 }
 
@@ -29,10 +33,23 @@
 
 @keyframes transformLvl2Lamp {
   100% {
-    transform: translateY(10vh);
+    transform: translateY(100px);
   }
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone {
-  transform: translate(-9vw, 1vh);
+  transform: translate(-100px, 450px);
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .dropzone svg {
+  width: var(----width);
+  x: calc(15vw - 100px);
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer svg {
+  width: var(----width);
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer svg {
+  width: var(----width);
 }

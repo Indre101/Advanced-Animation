@@ -33,7 +33,6 @@ h3 {
 
 .drop-target {
   opacity: 0.7;
-
   filter: drop-shadow(1px 1px 3px darkgrey);
 }
 
@@ -67,6 +66,7 @@ h3 {
   width: 100%;
   height: 100%;
 }
+
 .dropzone {
   width: 15vw;
   transition: filter 0.3s, opacity 0.3s;

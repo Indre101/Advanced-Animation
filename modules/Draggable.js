@@ -65,8 +65,14 @@ interact(".dropzone").dropzone({
 });
 
 function fillTheLamp() {
-  const flask = document.querySelector("#lamp #fill");
+  const flask = document.querySelector("#lamp #theSquare");
   console.log(flask);
   // gsap.to(flask, 5, { fill: "rgb(255,0,255)" });
-  gsap.to(flask, 2, { fill: "rgb(255,0,255)", transformOrigin: " 50% 100%" });
+  // gsap.to(flask, 2, { fill: "rgb(255,0,255)", transformOrigin: " 50% 100%" });
+  // gsap.from(flask, 2, {
+  //   attr: { y: 1000 },
+  //   fill: "rgb(255,0,255)",
+  //   repeat: -1
+  // });
+  gsap.to(flask, 2, { attr: { y: -1000 }, yoyo: true, repeat: -1 });
 }
