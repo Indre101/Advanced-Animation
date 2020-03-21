@@ -10,7 +10,6 @@ body {
 .Story {
   width: 90vw;
   height: 70vh;
-  overflow: hidden;
   display: grid;
   grid-template-rows: 10vh 55vh 10vh;
   text-align: center;

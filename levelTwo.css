@@ -1,4 +1,5 @@
-body {
+svg:root {
+  overflow: visible !important;
 }
 
 #lamp_lid[data-lifted="true"] {
@@ -41,7 +42,7 @@ body {
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone {
-  transform: translate(-100px, 450px);
+  transform: translate(-100px, 200px);
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone svg {

@@ -65,10 +65,11 @@ interact(".dropzone").dropzone({
 });
 
 function fillTheLamp() {
-  const flask = document.querySelector("#theSquare");
+  const oilLamp = document.querySelector("#theSquare");
+  console.log(oilLamp);
 
   gsap.fromTo(
-    flask,
+    oilLamp,
     0.8,
     {
       attr: {
@@ -85,7 +86,7 @@ function fillTheLamp() {
 
   // "Fill up" animation
   gsap.fromTo(
-    flask,
+    oilLamp,
     10,
     {
       attr: {
@@ -102,4 +103,60 @@ function fillTheLamp() {
   );
 
   // "Wave" animation
+  const flask = document.querySelector(".draggableItem");
+  gsap.to(flask, {
+    rotation: 60,
+    duration: 2
+  });
+  console.log(flask);
+
+  // const liquid = document.querySelector("#liquid");
+
+  // gsap.to(liquid, {
+  //   rotation: 60,
+  //   duration: 2
+  // });
+
+  const flaskOil = document.querySelector("#flaskOil");
+  console.log(flaskOil);
+  gsap.fromTo(
+    flaskOil,
+    0.8,
+    {
+      attr: {
+        x: -400
+      }
+    },
+    {
+      attr: {
+        x: 0
+      },
+      repeat: 30
+    }
+  );
+
+  // "Fill up" animation
+  gsap.fromTo(
+    flaskOil,
+    10,
+
+    {
+      rotation: 0,
+      attr: {
+        y: 10,
+        x: -1000,
+        height: 640
+      }
+    },
+    {
+      rotation: -60,
+
+      attr: {
+        x: 1000,
+
+        y: 500,
+        height: 0
+      }
+    }
+  );
 }
