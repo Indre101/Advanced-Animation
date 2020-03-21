@@ -41,6 +41,7 @@ h3 {
   width: 100%;
   height: 55vh;
   position: relative;
+  touch-action: none;
 }
 
 .ImageContainer div {
@@ -70,6 +71,7 @@ h3 {
   width: 15vw;
   transition: filter 0.3s, opacity 0.3s;
   opacity: 0;
+  position: absolute;
 }
 
 .dropzone[data-moving="hovering"] {
@@ -81,6 +83,10 @@ h3 {
   opacity: 0.2;
   border: 1px dashed grey;
   filter: drop-shadow(1px 1px 3px darkgrey);
+}
+
+.dropzone svg {
+  width: 15vw;
 }
 
 .dropzone[data-moving="dropped"] {

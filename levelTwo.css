@@ -19,7 +19,7 @@
 
 @keyframes transformLvl2 {
   100% {
-    transform: translate(-100%, -100%);
+    transform: translate(-25vw, -20vh);
   }
 }
 
@@ -29,10 +29,10 @@
 
 @keyframes transformLvl2Lamp {
   100% {
-    transform: translate(30%, 52%);
+    transform: translateY(10vh);
   }
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone {
-  transform: translate(60%, 160%);
+  transform: translate(-9vw, 1vh);
 }

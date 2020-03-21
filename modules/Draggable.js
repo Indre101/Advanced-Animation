@@ -68,5 +68,5 @@ function fillTheLamp() {
   const flask = document.querySelector("#lamp #fill");
   console.log(flask);
   // gsap.to(flask, 5, { fill: "rgb(255,0,255)" });
-  gsap.to(flask, 2, { fill: "rgb(255,0,255)", ease: Linear.easeNone });
+  gsap.to(flask, 2, { fill: "rgb(255,0,255)", transformOrigin: " 50% 100%" });
 }
