@@ -79,11 +79,29 @@ svg:root {
 #ShiftedLiquid,
 #pouringLiquid2,
 #pouringliquidOne,
-#startingPoint {
+#startingPoint,
+#lightStrokeLarge {
   opacity: 0;
 }
 
 #pouringliquidOne[data-show="true"],
-#startingPoint[data-show="true"], #light[data-show="true"] {
+#startingPoint[data-show="true"],
+#light[data-show="true"] {
   opacity: 1;
+}
+
+.firedot {
+  fill: white;
+  animation: blinking 0.5s linear alternate infinite;
+}
+
+@keyframes blinking {
+  0% {
+    fill: white;
+    stroke-width: 8;
+  }
+  100% {
+    fill: black;
+    stroke-width: 0;
+  }
 }

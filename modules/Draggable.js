@@ -80,7 +80,7 @@ function animateLightingTheWick() {
   console.log(theMatch);
   console.log(document.querySelector("#oilLampFull"));
   console.log(document.querySelector("#lightStrokeLarge"));
-  console.log(document.querySelector("#lightStrokeSmall"));
+  console.log(document.querySelector("#smallLight"));
 
   const tl = gsap.timeline();
 
@@ -90,11 +90,7 @@ function animateLightingTheWick() {
     onComplete: function() {
       document.querySelector("#light").dataset.show = "true";
       removeItemFromDisplay("#theMatch");
-      repeatingMorphing(
-        "#oilLampFull",
-        "#lightStrokeLarge",
-        "#lightStrokeSmall"
-      );
+      repeatingMorphing("#oilLampFull", "#smallLight", "#lightStrokeLarge");
     }
   });
 }
@@ -186,13 +182,13 @@ function fillTheLamp() {
 function toMorph(svgId, firstPath, pathToMorphto) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
-  const simpleCup = Snap.select(firstPath);
-  const fancyCup = Snap.select(pathToMorphto);
-  const simpleCupPoints = simpleCup.node.getAttribute("d");
-  const fancyCupPoints = fancyCup.node.getAttribute("d");
+  const firstElement = Snap.select(firstPath);
+  const secondElement = Snap.select(pathToMorphto);
+  const firstElementPoints = firstElement.node.getAttribute("d");
+  const secondElementPoints = secondElement.node.getAttribute("d");
 
   const morphing = function() {
-    simpleCup.animate({ d: fancyCupPoints }, 1000, mina.easeout);
+    firstElement.animate({ d: secondElementPoints }, 1000, mina.easeout);
   };
   morphing();
 }
@@ -200,20 +196,22 @@ function toMorph(svgId, firstPath, pathToMorphto) {
 function repeatingMorphing(svgId, firstPath, pathToMorphto) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
-  const simpleCup = Snap.select(firstPath);
-  const fancyCup = Snap.select(pathToMorphto);
-  console.log(fancyCup);
-  console.log(simpleCup);
-
-  const simpleCupPoints = simpleCup.node.getAttribute("d");
-  const fancyCupPoints = fancyCup.node.getAttribute("d");
+  const firstElement = Snap.select(firstPath);
+  const secondElement = Snap.select(pathToMorphto);
+  const firstElementPoints = firstElement.node.getAttribute("d");
+  const secondElementPoints = secondElement.node.getAttribute("d");
 
   const toPreviousPath = function() {
-    simpleCup.animate({ d: fancyCupPoints }, 1000, mina.backout, toNextPath);
+    firstElement.animate(
+      { d: secondElementPoints },
+      1000,
+      mina.backout,
+      toNextPath
+    );
   };
   const toNextPath = function() {
-    simpleCup.animate(
-      { d: simpleCupPoints },
+    firstElement.animate(
+      { d: firstElementPoints },
       1000,
       mina.backout,
       toPreviousPath
@@ -221,7 +219,7 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto) {
   };
 
   setTimeout(() => {
-    simpleCup.stop();
+    firstElement.stop();
     removeItemFromDisplay(".draggableItem");
     closeTheLampLid();
   }, 4100);
