@@ -32,8 +32,6 @@ interact(".dropzone").dropzone({
   // Require a 75% element overlap for a drop to be possible
   overlap: 0.75,
 
-  // listen for drop related events:
-
   ondragenter: function(event) {
     // feedback the possibility of a drop
     event.target.dataset.moving = "hovering";
@@ -42,9 +40,6 @@ interact(".dropzone").dropzone({
   ondragleave: function(event) {
     // remove the drop feedback style
     event.target.dataset.moving = "activeMoving";
-
-    // event.target.dataset.moving = " ";
-    // event.relatedTarget.classList.remove("can-drop");
   },
 
   ondrop: function(event) {
@@ -53,14 +48,8 @@ interact(".dropzone").dropzone({
     animateDraggableObjects();
   },
 
-  // ondropdeactivate: function(event) {
-  //   // remove active dropzone feedback
-  //   event.target.dataset.moving = "activeMoving";
-  // },
-
   ondropactivate: function(event) {
     event.target.dataset.moving = "activeMoving";
-    // add active dropzone feedback
   }
 });
 
@@ -104,20 +93,18 @@ function animateLightingTheWick() {
     {
       y: 100,
       scale: 0.2,
-      duration: 3,
+      duration: 5,
       opacity: 1,
-      ease: "rough",
+      ease: "stepped",
       repeat: -1
     },
     {
       y: 0,
       scale: 1.2,
-      duration: 3,
+      duration: 5,
       opacity: 0,
-
       stagger: 0.5,
-      ease: "rough",
-
+      ease: "stepped",
       repeat: -1
     }
   );
