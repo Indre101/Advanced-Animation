@@ -109,6 +109,8 @@ function fillTheLamp() {
 function animateFlask() {
   const flask = document.querySelector(".draggableItem");
   gsap.to(flask, {
+    x: 183,
+    y: 258,
     rotation: 100,
     duration: 3
   });
@@ -116,8 +118,15 @@ function animateFlask() {
 
   toMorph("flaskSVG", "#liquid", "#ShiftedLiquid");
   setTimeout(() => {
-    repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
-  }, 2000);
+    document.querySelector("#startingPoint").dataset.show = "true";
+    toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne");
+
+    setTimeout(() => {
+      document.querySelector("#pouringliquidOne").dataset.show = "true";
+
+      repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
+    }, 700);
+  }, 1000);
 }
 
 function toMorph(svgId, firstPath, pathToMorphto) {
@@ -135,8 +144,6 @@ function toMorph(svgId, firstPath, pathToMorphto) {
 }
 
 function repeatingMorphing(svgId, firstPath, pathToMorphto) {
-  document.querySelector("#pouringliquidOne").dataset.show = "true";
-
   const svg = document.getElementById(svgId);
   const s = Snap(svg);
   const simpleCup = Snap.select(firstPath);

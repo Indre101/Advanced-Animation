@@ -27,6 +27,7 @@ svg:root {
 
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
   animation: transformLvl2 0.5s ease-in-out forwards 1;
+  z-index: 11111;
 }
 
 @keyframes transformLvl2 {
@@ -46,7 +47,7 @@ svg:root {
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone {
-  transform: translate(-100px, 200px);
+  transform: translate(-37px, 262px);
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone svg {
