@@ -51,7 +51,6 @@ interact(".dropzone").dropzone({
     console.log(event.target);
     event.target.dataset.moving = "dropped";
     interact(".draggableItem").unset();
-    fillTheLamp();
     animateFlask();
   },
 
@@ -120,13 +119,24 @@ function animateFlask() {
   setTimeout(() => {
     document.querySelector("#startingPoint").dataset.show = "true";
     toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne");
-
+    turnTheLid();
     setTimeout(() => {
       document.querySelector("#pouringliquidOne").dataset.show = "true";
-
+      fillTheLamp();
       repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
     }, 700);
   }, 1000);
+}
+
+function turnTheLid() {
+  const lampLid = document.querySelector("#lamp_lid");
+
+  gsap.to(lampLid, {
+    rotation: 90,
+    transformOrigin: "bottom right",
+    duration: 0.5,
+    ease: "bounce"
+  });
 }
 
 function toMorph(svgId, firstPath, pathToMorphto) {
@@ -163,5 +173,9 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto) {
       toPreviousPath
     );
   };
+
+  setTimeout(() => {
+    simpleCup.stop();
+  }, 4100);
   toNextPath();
 }
