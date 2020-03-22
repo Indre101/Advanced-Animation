@@ -105,20 +105,36 @@ function fillTheLamp() {
 
   // THE FLASK ITEM
   const flask = document.querySelector(".draggableItem");
-  // gsap.to(flask, {
-  //   rotation: 110,
-  //   duration: 3
-  // });
+  gsap.to(flask, {
+    rotation: 110,
+    duration: 3
+  });
   console.log(flask);
 
   // THE FLASKOIL
   const flaskOil = document.querySelector("#flaskOil");
   console.log(flaskOil);
-  gsap.to(flaskOil, 2, {
-    attr: { y: 1000 },
-    yoyo: true,
-    repeat: -1
-  });
+  const tl = gsap.timeline();
+
+  tl.fromTo(
+    flaskOil,
+    2,
+    {
+      y: 0,
+      x: 0,
+      yoyo: true,
+      rotation: 0,
+      repeat: -1
+    },
+    {
+      y: 200,
+      x: -250,
+
+      rotation: 70,
+      transformOrigin: "center",
+      repeat: -1
+    }
+  );
 
   // const tl = gsap.timeline();
 

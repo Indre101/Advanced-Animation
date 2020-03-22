@@ -1,3 +1,7 @@
+*{
+  /* vector-effect: non-scaling-stroke; */
+}
+
 svg:root {
   overflow: visible !important;
 }
@@ -57,3 +61,5 @@ svg:root {
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer svg {
   width: var(----width);
 }
+
+
