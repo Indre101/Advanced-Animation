@@ -90,9 +90,37 @@ function animateLightingTheWick() {
     onComplete: function() {
       document.querySelector("#light").dataset.show = "true";
       removeItemFromDisplay("#theMatch");
-      repeatingMorphing("#oilLampFull", "#smallLight", "#lightStrokeLarge");
+      repeatingMorphing(
+        "#oilLampFull",
+        "#smallLight",
+        "#lightStrokeLarge",
+        1500
+      );
     }
   });
+
+  gsap.fromTo(
+    ".firedot",
+    {
+      y: 100,
+      scale: 0.2,
+      duration: 3,
+      opacity: 1,
+      ease: "rough",
+      repeat: -1
+    },
+    {
+      y: 0,
+      scale: 1.2,
+      duration: 3,
+      opacity: 0,
+
+      stagger: 0.5,
+      ease: "rough",
+
+      repeat: -1
+    }
+  );
 }
 
 // THE FLASK ITEM
@@ -105,15 +133,20 @@ function animateFlask() {
     duration: 3
   });
 
-  toMorph("flaskSVG", "#liquid", "#ShiftedLiquid");
+  toMorph("flaskSVG", "#liquid", "#ShiftedLiquid", 1000);
   setTimeout(() => {
     document.querySelector("#startingPoint").dataset.show = "true";
-    toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne");
+    toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne", 1000);
     turnTheLid();
     setTimeout(() => {
       document.querySelector("#pouringliquidOne").dataset.show = "true";
       fillTheLamp();
-      repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
+      repeatingMorphing(
+        "flaskSVG",
+        "#pouringliquidOne",
+        "#pouringLiquid2",
+        1000
+      );
     }, 700);
   }, 1000);
 }
@@ -179,7 +212,7 @@ function fillTheLamp() {
   );
 }
 
-function toMorph(svgId, firstPath, pathToMorphto) {
+function toMorph(svgId, firstPath, pathToMorphto, duration) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
   const firstElement = Snap.select(firstPath);
@@ -188,12 +221,12 @@ function toMorph(svgId, firstPath, pathToMorphto) {
   const secondElementPoints = secondElement.node.getAttribute("d");
 
   const morphing = function() {
-    firstElement.animate({ d: secondElementPoints }, 1000, mina.easeout);
+    firstElement.animate({ d: secondElementPoints }, duration, mina.easeout);
   };
   morphing();
 }
 
-function repeatingMorphing(svgId, firstPath, pathToMorphto) {
+function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
   const firstElement = Snap.select(firstPath);
@@ -204,7 +237,7 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto) {
   const toPreviousPath = function() {
     firstElement.animate(
       { d: secondElementPoints },
-      1000,
+      duration,
       mina.backout,
       toNextPath
     );
@@ -212,14 +245,14 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto) {
   const toNextPath = function() {
     firstElement.animate(
       { d: firstElementPoints },
-      1000,
+      duration,
       mina.backout,
       toPreviousPath
     );
   };
 
   setTimeout(() => {
-    firstElement.stop();
+    // firstElement.stop();
     removeItemFromDisplay(".draggableItem");
     closeTheLampLid();
   }, 4100);

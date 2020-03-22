@@ -14,8 +14,8 @@
         <line x1="37.91" y1="176.82" x2="37.91" y2="151.73" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
       </g>
       <g id="light">
-        <path class="firedot" d="M4,19H20V35H4Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-wclassth="8"/>
-        <path class="firedot" data-name="firedot" d="M92,115h16v16H92Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-wclassth="8"/>
+        <path class="firedot" d="M4,19H20V35H4Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path class="firedot" data-name="firedot" d="M92,115h16v16H92Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
         <path class="firedot" data-name="firedot" d="M148,51h16V67H148Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
         <g id="surface1">
           <path id="lightStrokeLarge" d="M94.15,34.13a1.23,1.23,0,0,0-2.24.82,43.52,43.52,0,0,1-5.62,23.9c.76-4.42,1.14-10.92.4-20.4C84.79,14.57,63.11,4.22,62.89,4.12a1.24,1.24,0,0,0-1.65.59h0a1.23,1.23,0,0,0-.11.68c1.26,9.8-1,14.13-7.15,25.71-2.47,4.66-5.53,10.48-9.21,18.24C37.51,64.71,42,77.08,47.4,85.07c.29.43.58.84.88,1.24.72,1,1.46,1.9,2.17,2.73.39.46.78.89,1.16,1.3.65.7,1.27,1.32,1.84,1.88l.93.87a31.52,31.52,0,0,0,2.53,2.09h0l.38.17A35.24,35.24,0,0,0,70.87,98,34,34,0,0,0,84,95.43h0l.24-.1.54-.23a50,50,0,0,0,8.56-9c.69-.92,1.39-1.91,2.08-3,.17-.25.33-.5.49-.76A48.6,48.6,0,0,0,102,68.06C106.16,51.24,94.61,34.8,94.15,34.13Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
