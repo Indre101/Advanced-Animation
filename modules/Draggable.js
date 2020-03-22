@@ -48,10 +48,9 @@ interact(".dropzone").dropzone({
   },
 
   ondrop: function(event) {
-    console.log(event.target);
     event.target.dataset.moving = "dropped";
     interact(".draggableItem").unset();
-    animateFlask();
+    animateDraggableObjects();
   },
 
   // ondropdeactivate: function(event) {
@@ -65,7 +64,88 @@ interact(".dropzone").dropzone({
   }
 });
 
+function animateDraggableObjects() {
+  const ImageContainerChaptervalue = document.querySelector(".ImageContainer")
+    .dataset.chapter;
+  if (ImageContainerChaptervalue === "lvl2-p2") {
+    console.log("object");
+    animateFlask();
+  } else if (ImageContainerChaptervalue === "lvl2-p3") {
+    animateLightingTheWick();
+  }
+}
+
+function animateLightingTheWick() {
+  const theMatch = document.querySelector(".draggableItem");
+  console.log(theMatch);
+  console.log(document.querySelector("#oilLampFull"));
+  console.log(document.querySelector("#lightStrokeLarge"));
+  console.log(document.querySelector("#lightStrokeSmall"));
+
+  const tl = gsap.timeline();
+
+  tl.to(theMatch, { x: 70, y: 245, duration: 3 }).to(theMatch, {
+    rotation: 30,
+    duration: 1,
+    onComplete: function() {
+      document.querySelector("#light").dataset.show = "true";
+      removeItemFromDisplay("#theMatch");
+      repeatingMorphing(
+        "#oilLampFull",
+        "#lightStrokeLarge",
+        "#lightStrokeSmall"
+      );
+    }
+  });
+}
+
+// THE FLASK ITEM
+function animateFlask() {
+  const flask = document.querySelector(".draggableItem");
+  gsap.to(flask, {
+    x: 183,
+    y: 258,
+    rotation: 100,
+    duration: 3
+  });
+
+  toMorph("flaskSVG", "#liquid", "#ShiftedLiquid");
+  setTimeout(() => {
+    document.querySelector("#startingPoint").dataset.show = "true";
+    toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne");
+    turnTheLid();
+    setTimeout(() => {
+      document.querySelector("#pouringliquidOne").dataset.show = "true";
+      fillTheLamp();
+      repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
+    }, 700);
+  }, 1000);
+}
+
+function turnTheLid() {
+  const lampLid = document.querySelector("#lamp_lid");
+
+  gsap.to(lampLid, {
+    rotation: 90,
+    transformOrigin: "bottom right",
+    duration: 0.5,
+    ease: "bounce"
+  });
+}
+
+function closeTheLampLid() {
+  const lampLid = document.querySelector("#lamp_lid");
+
+  gsap.to(lampLid, {
+    rotation: 0,
+    transformOrigin: "bottom right",
+    duration: 0.5,
+    ease: "bounce"
+  });
+}
+
 function fillTheLamp() {
+  console.log("object");
   // THE LAMP LIQUID
   const oilLamp = document.querySelector("#theSquare");
   gsap.fromTo(
@@ -101,46 +181,10 @@ function fillTheLamp() {
       }
     }
   );
-
-  // THE FLASK ITEM
-}
-
-function animateFlask() {
-  const flask = document.querySelector(".draggableItem");
-  gsap.to(flask, {
-    x: 183,
-    y: 258,
-    rotation: 100,
-    duration: 3
-  });
-  console.log(flask);
-
-  toMorph("flaskSVG", "#liquid", "#ShiftedLiquid");
-  setTimeout(() => {
-    document.querySelector("#startingPoint").dataset.show = "true";
-    toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne");
-    turnTheLid();
-    setTimeout(() => {
-      document.querySelector("#pouringliquidOne").dataset.show = "true";
-      fillTheLamp();
-      repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
-    }, 700);
-  }, 1000);
-}
-
-function turnTheLid() {
-  const lampLid = document.querySelector("#lamp_lid");
-
-  gsap.to(lampLid, {
-    rotation: 90,
-    transformOrigin: "bottom right",
-    duration: 0.5,
-    ease: "bounce"
-  });
 }
 
 function toMorph(svgId, firstPath, pathToMorphto) {
-  const svg = document.getElementById(svgId);
+  const svg = document.querySelector(svgId);
   const s = Snap(svg);
   const simpleCup = Snap.select(firstPath);
   const fancyCup = Snap.select(pathToMorphto);
@@ -154,11 +198,13 @@ function toMorph(svgId, firstPath, pathToMorphto) {
 }
 
 function repeatingMorphing(svgId, firstPath, pathToMorphto) {
-  const svg = document.getElementById(svgId);
+  const svg = document.querySelector(svgId);
   const s = Snap(svg);
   const simpleCup = Snap.select(firstPath);
   const fancyCup = Snap.select(pathToMorphto);
   console.log(fancyCup);
+  console.log(simpleCup);
+
   const simpleCupPoints = simpleCup.node.getAttribute("d");
   const fancyCupPoints = fancyCup.node.getAttribute("d");
 
@@ -176,6 +222,13 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto) {
 
   setTimeout(() => {
     simpleCup.stop();
+    removeItemFromDisplay(".draggableItem");
+    closeTheLampLid();
   }, 4100);
   toNextPath();
+}
+
+function removeItemFromDisplay(itemIdOrClass) {
+  const item = document.querySelector(itemIdOrClass);
+  gsap.to(item, { opacity: 0, duration: 0.3, ease: "easeout" });
 }

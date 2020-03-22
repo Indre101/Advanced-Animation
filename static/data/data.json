@@ -21,7 +21,7 @@
       {
         "id": "lvl2-p3",
         "media": [
-          { "src": "oilLamp.svg", "draggable": false },
+          { "src": "oilLampFull.svg", "draggable": false },
           { "src": "match.svg", "draggable": true }
         ],
         "textUpper": "2 litres  of lamp oil will last about 256 hours. If you burned 6 hours a day, 2 litres of lamp oil would last you about 42 days",
@@ -29,7 +29,7 @@
       },
       {
         "id": "lvl1-p4",
-        "media": [{ "src": "oilLamp.svg", "draggable": false }],
+        "media": [{ "src": "oilLampFull.svg", "draggable": false }],
         "textUpper": "Oil lamps burned cleaner, with less smoke, than candles and other sources of light before electricity.",
         "instruction": "Next"
       }
