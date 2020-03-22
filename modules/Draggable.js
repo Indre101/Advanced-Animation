@@ -1,5 +1,6 @@
 import interact from "interactjs";
 import gsap from "gsap";
+import Snap from "snapsvg";
 // enable draggables to be dropped into this
 
 export function DraggElement() {
@@ -51,6 +52,7 @@ interact(".dropzone").dropzone({
     event.target.dataset.moving = "dropped";
     interact(".draggableItem").unset();
     fillTheLamp();
+    animateFlask();
   },
 
   // ondropdeactivate: function(event) {
@@ -67,8 +69,6 @@ interact(".dropzone").dropzone({
 function fillTheLamp() {
   // THE LAMP LIQUID
   const oilLamp = document.querySelector("#theSquare");
-  console.log(oilLamp);
-
   gsap.fromTo(
     oilLamp,
     0.8,
@@ -104,72 +104,57 @@ function fillTheLamp() {
   );
 
   // THE FLASK ITEM
+}
+
+function animateFlask() {
   const flask = document.querySelector(".draggableItem");
   gsap.to(flask, {
-    rotation: 110,
+    rotation: 100,
     duration: 3
   });
   console.log(flask);
 
-  // THE FLASKOIL
-  const flaskOil = document.querySelector("#flaskOil");
-  console.log(flaskOil);
-  const tl = gsap.timeline();
+  toMorph("flaskSVG", "#liquid", "#ShiftedLiquid");
+  setTimeout(() => {
+    repeatingMorphing("flaskSVG", "#pouringliquidOne", "#pouringLiquid2");
+  }, 2000);
+}
 
-  tl.fromTo(
-    flaskOil,
-    2,
-    {
-      y: 0,
-      x: 0,
-      yoyo: true,
-      rotation: 0,
-      repeat: -1
-    },
-    {
-      y: 200,
-      x: -250,
+function toMorph(svgId, firstPath, pathToMorphto) {
+  const svg = document.getElementById(svgId);
+  const s = Snap(svg);
+  const simpleCup = Snap.select(firstPath);
+  const fancyCup = Snap.select(pathToMorphto);
+  const simpleCupPoints = simpleCup.node.getAttribute("d");
+  const fancyCupPoints = fancyCup.node.getAttribute("d");
 
-      rotation: 70,
-      transformOrigin: "center",
-      repeat: -1
-    }
-  );
+  const morphing = function() {
+    simpleCup.animate({ d: fancyCupPoints }, 1000, mina.easeout);
+  };
+  morphing();
+}
 
-  // const tl = gsap.timeline();
+function repeatingMorphing(svgId, firstPath, pathToMorphto) {
+  document.querySelector("#pouringliquidOne").dataset.show = "true";
 
-  // gsap.to(flaskOil, {
-  //   rotation: -30,
-  //   transformOrigin: "top",
-  //   ease: "elastic",
-  //   duration: 5
-  // });
+  const svg = document.getElementById(svgId);
+  const s = Snap(svg);
+  const simpleCup = Snap.select(firstPath);
+  const fancyCup = Snap.select(pathToMorphto);
+  console.log(fancyCup);
+  const simpleCupPoints = simpleCup.node.getAttribute("d");
+  const fancyCupPoints = fancyCup.node.getAttribute("d");
 
-  // gsap.fromTo(
-  //   flaskOil,
-
-  //   {
-  //     duration: 15,
-  //     y: 0,
-  //     height: 640
-  //   },
-  //   {
-  //     duration: 15,
-  //     y: 1000,
-  //     height: 0
-  //   }
-  // );
-
-  // gsap.fromTo(
-  //   flaskOil,
-  //   {
-  //     x: -1000,
-  //     duration: 5
-  //   },
-  //   {
-  //     x: 0,
-  //     repeat: 30,
-  //     duration: 5
-  //   }
-  // );
+  const toPreviousPath = function() {
+    simpleCup.animate({ d: fancyCupPoints }, 1000, mina.backout, toNextPath);
+  };
+  const toNextPath = function() {
+    simpleCup.animate(
+      { d: simpleCupPoints },
+      1000,
+      mina.backout,
+      toPreviousPath
+    );
+  };
+  toNextPath();
 }

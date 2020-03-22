@@ -9,7 +9,8 @@
     "d3-drag": "1.2.5",
     "gsap": "3.2.4",
     "interactjs": "^1.9.7",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "snapsvg": "^0.5.1"
   },
   "devDependencies": {
     "@interactjs/types": "1.9.7",

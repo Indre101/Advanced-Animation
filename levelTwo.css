@@ -1,4 +1,4 @@
-*{
+* {
   /* vector-effect: non-scaling-stroke; */
 }
 
@@ -62,4 +62,14 @@ svg:root {
   width: var(----width);
 }
 
+#ShiftedLiquid,
+#pouringLiquid2,
+#pouringliquidOne,
+#startingPoint {
+  opacity: 0;
+}
 
+#pouringliquidOne[data-show="true"],
+#startingPoint[data-show="true"] {
+  opacity: 1;
+}
