@@ -65,6 +65,7 @@ interact(".dropzone").dropzone({
 });
 
 function fillTheLamp() {
+  // THE LAMP LIQUID
   const oilLamp = document.querySelector("#theSquare");
   console.log(oilLamp);
 
@@ -102,61 +103,57 @@ function fillTheLamp() {
     }
   );
 
-  // "Wave" animation
+  // THE FLASK ITEM
   const flask = document.querySelector(".draggableItem");
-  gsap.to(flask, {
-    rotation: 60,
-    duration: 2
-  });
+  // gsap.to(flask, {
+  //   rotation: 110,
+  //   duration: 3
+  // });
   console.log(flask);
 
-  // const liquid = document.querySelector("#liquid");
-
-  // gsap.to(liquid, {
-  //   rotation: 60,
-  //   duration: 2
-  // });
-
+  // THE FLASKOIL
   const flaskOil = document.querySelector("#flaskOil");
   console.log(flaskOil);
-  gsap.fromTo(
-    flaskOil,
-    0.8,
-    {
-      attr: {
-        x: -400
-      }
-    },
-    {
-      attr: {
-        x: 0
-      },
-      repeat: 30
-    }
-  );
+  gsap.to(flaskOil, 2, {
+    attr: { y: 1000 },
+    yoyo: true,
+    repeat: -1
+  });
 
-  // "Fill up" animation
-  gsap.fromTo(
-    flaskOil,
-    10,
+  // const tl = gsap.timeline();
 
-    {
-      rotation: 0,
-      attr: {
-        y: 10,
-        x: -1000,
-        height: 640
-      }
-    },
-    {
-      rotation: -60,
+  // gsap.to(flaskOil, {
+  //   rotation: -30,
+  //   transformOrigin: "top",
+  //   ease: "elastic",
+  //   duration: 5
+  // });
 
-      attr: {
-        x: 1000,
+  // gsap.fromTo(
+  //   flaskOil,
 
-        y: 500,
-        height: 0
-      }
-    }
-  );
+  //   {
+  //     duration: 15,
+  //     y: 0,
+  //     height: 640
+  //   },
+  //   {
+  //     duration: 15,
+  //     y: 1000,
+  //     height: 0
+  //   }
+  // );
+
+  // gsap.fromTo(
+  //   flaskOil,
+  //   {
+  //     x: -1000,
+  //     duration: 5
+  //   },
+  //   {
+  //     x: 0,
+  //     repeat: 30,
+  //     duration: 5
+  //   }
+  // );
 }
