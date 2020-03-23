@@ -80,6 +80,7 @@ function clickedImage() {
   const offBtn = document.querySelector("#squareSwitchOn");
   const lightsOne = document.querySelector("#Light-dashesGroupOne");
   const lightsTwo = document.querySelector("#Light-dashesGroupTwo");
+  const lightBulb = document.querySelector("#LightBulbCirlce");
 
   gsap.to(onBtn, { fill: "black", duration: 0.3, ease: "bounce" });
   gsap.to(offBtn, { fill: "white", duration: 0.3, ease: "bounce" });
@@ -90,6 +91,7 @@ function clickedImage() {
     setTimeout(() => {
       lightsOne.dataset.show = "true";
       lightsTwo.dataset.show = "true";
+      lightBulb.dataset.show = "true";
     }, 2000);
   }, 300);
 }
