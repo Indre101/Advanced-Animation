@@ -1,15 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351.7 478.98">
-  <title>Asset 1</title>
+<svg id="switchOne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351.7 478.98">
+  <title>Asset 6</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Capa_1" data-name="Capa 1">
       <path d="M345.33,453.77A21.35,21.35,0,0,1,323.88,475L25.21,473.33A21.36,21.36,0,0,1,4,451.87L6.37,25.21A21.35,21.35,0,0,1,27.82,4L326.48,5.66A21.35,21.35,0,0,1,347.7,27.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
-      <path id="outlinebutton" d="M239.92,227.45l.58-104.93a10.66,10.66,0,0,0-10.61-10.73l-106.66-.59a10.66,10.66,0,0,0-10.73,10.61l-1.18,213.33a10.65,10.65,0,0,0,10.6,10.72l96,.53a10.68,10.68,0,0,0,8.57-4.22l32.23-42.49a10.69,10.69,0,0,0,1.64-9.76Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
       <polygon points="132.83 303.26 132.99 273.76 141.75 291.51 132.83 303.26" fill="#f2f2f2"/>
-      <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
-      <g id="switchbutton">
-        <polygon points="235.47 282.49 160.87 282.08 139.77 239.29 221.49 239.75 235.47 282.49" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
-        <polygon points="134.4 273.77 134.2 310.36 144.63 296.26 134.4 273.77" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="8"/>
-        <polygon points="212.71 325.03 143.38 324.65 159.5 303.4 228.82 303.79 212.71 325.03" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <g id="button">
+        <g id="switchbutton">
+          <path id="outlineSwitchOn" d="M101.77,230.14l-.59,104.94a10.67,10.67,0,0,0,10.61,10.72l106.67.59a10.65,10.65,0,0,0,10.72-10.6l1.19-213.33a10.66,10.66,0,0,0-10.61-10.73l-96-.53a10.67,10.67,0,0,0-8.56,4.22L83,157.91a10.72,10.72,0,0,0-1.64,9.76Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <path id="outlinebutton" d="M239.92,227.45l.58-104.93a10.66,10.66,0,0,0-10.61-10.73l-106.66-.59a10.66,10.66,0,0,0-10.73,10.61l-1.18,213.33a10.65,10.65,0,0,0,10.6,10.72l96,.53a10.68,10.68,0,0,0,8.57-4.22l32.23-42.49a10.69,10.69,0,0,0,1.64-9.76Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
+          <rect id="squareSwitchOn" x="134.25" y="239.82" width="85.33" height="85.33" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-106.55 457.83) rotate(-89.68)"/>
+          <g id="switchOnBtn">
+            <polygon points="214.22 132.67 145.77 132.96 161.69 161.28 230.13 161 214.22 132.67" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <polygon points="236.72 175.24 162.12 175.56 140.96 218.31 222.68 217.97 236.72 175.24" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <polygon points="135.64 183.83 135.48 147.24 145.89 161.35 135.64 183.83" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="8"/>
+          </g>
+          <polygon points="212.71 325.03 143.38 324.65 159.5 303.4 228.82 303.79 212.71 325.03" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <polygon points="235.47 282.49 160.87 282.08 139.77 239.29 221.49 239.75 235.47 282.49" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <polygon points="134.4 273.77 134.2 310.36 144.63 296.26 134.4 273.77" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="8"/>
+        </g>
       </g>
       <circle cx="176.92" cy="47.5" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
       <circle cx="174.78" cy="431.49" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>

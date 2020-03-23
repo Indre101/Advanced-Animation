@@ -1,8 +1,32 @@
 .ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(1) {
   top: 60%;
+  width: 50%;
 }
 
 .ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(2) {
   left: 8%;
   top: 35%;
+}
+
+#wire {
+  fill: none;
+  opacity: 0;
+}
+
+#wire[data-show:"true"] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 2s linear 1 forwards;
+  opacity: 0;
+}
+
+@keyframes dash {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
