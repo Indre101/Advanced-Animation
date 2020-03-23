@@ -70,9 +70,11 @@ function AnimateDraggableObjects() {
 function animateLightingTheWick() {
   const theMatch = document.querySelector(".draggableItem");
   const theMatchContainer = document.querySelector(".movableitemContainer");
-  theMatchContainer.dataset.droppedmatch = "true";
+  // theMatchContainer.dataset.droppedmatch = "true";
 
-  gsap.to(theMatch, {
+  const tl = gsap.timeline();
+
+  tl.to(theMatchContainer, { x: -15, y: 105, duration: 0.4 }).to(theMatch, {
     rotation: 30,
     duration: 1,
     onComplete: function() {

@@ -42,17 +42,17 @@ svg:root {
   }
 }
 
-.ImageContainer[data-chapter="lvl2-p3"]
+/* .ImageContainer[data-chapter="lvl2-p3"]
   .movableitemContainer[data-droppedmatch="true"] {
   animation: moveMatch 0.4s linear forwards 1;
 }
 
 @keyframes moveMatch {
   100% {
-    left: 5%;
+    left: 15%;
     top: 34%;
   }
-}
+} */
 
 .ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer,
 .ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
