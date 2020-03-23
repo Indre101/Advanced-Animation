@@ -39,7 +39,6 @@ function createDraggableContainer(createdSvg, parent, container, img) {
 }
 
 async function createDropZone(img, container) {
-  console.log(img);
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
@@ -50,4 +49,11 @@ async function createDropZone(img, container) {
 
 function createNONContainer(parent) {
   parent.classList.add("NOTmovableitemContainer");
+}
+
+function addAnimationToTheLampLid() {
+  if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
+    document.querySelector("#lamp_lid").dataset.lifted = "true";
+    console.log(document.querySelector("#lamp_lid"));
+  }
 }

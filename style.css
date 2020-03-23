@@ -10,7 +10,6 @@ body {
 .Story {
   width: 90vw;
   height: 70vh;
-  overflow: hidden;
   display: grid;
   grid-template-rows: 10vh 55vh 10vh;
   text-align: center;
@@ -22,12 +21,7 @@ body {
 h3 {
   font-size: 3vh;
 }
-.ImageContainer {
-  width: 10%;
-  height: 50%;
-  object-fit: contain;
-  touch-action: none;
-}
+
 .svgContainer {
   width: 100%;
   height: 100%;
@@ -38,7 +32,6 @@ h3 {
 
 .drop-target {
   opacity: 0.7;
-
   filter: drop-shadow(1px 1px 3px darkgrey);
 }
 
@@ -46,33 +39,38 @@ h3 {
   width: 100%;
   height: 55vh;
   position: relative;
+  touch-action: none;
 }
+
 .ImageContainer div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .movableitemContainer {
-  width: 10vw;
-  grid-area: 1/1 / span 1 / span 1;
-  order: -1;
-  align-self: flex-start;
+  width: 15vw;
 }
 
 .movableitemContainer svg {
   z-index: 10000;
 }
+
 .NOTmovableitemContainer {
   width: 15vw;
 }
 
+.ImageContainer[data-chapter="lvl1-p6"] .NOTmovableitemContainer {
+  width: 100%;
+  height: 100%;
+}
+
 .dropzone {
-  width: 10vw;
+  width: 15vw;
   transition: filter 0.3s, opacity 0.3s;
   opacity: 0;
-  height: fit-content;
-  align-self: center;
+  position: absolute;
 }
 
 .dropzone[data-moving="hovering"] {
@@ -84,6 +82,10 @@ h3 {
   opacity: 0.2;
   border: 1px dashed grey;
   filter: drop-shadow(1px 1px 3px darkgrey);
+}
+
+.dropzone svg {
+  width: 15vw;
 }
 
 .dropzone[data-moving="dropped"] {
@@ -100,3 +102,4 @@ h3 {
   width: 60vw;
   grid-gap: 1vw;
 }
+
