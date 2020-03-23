@@ -30,7 +30,7 @@ async function createSvg(img, container) {
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
   // svg.setAttribute("href", `images/level-images/${img}`);
-  svg.setAttribute("class", `IMGclicked click`);
+  svg.setAttribute("class", `IMGclicked`);
   svg.setAttribute("viewBox", "0 0 300 300");
   svg.setAttribute("class", "svgContainer");
   svg.dataset.name = img.src.substring(0, img.src.length - 4);
@@ -66,6 +66,7 @@ async function createDropZone(img, container) {
 
 function createNONContainer(parent, addName) {
   parent.classList.add("NOTmovableitemContainer");
+  parent.classList.add("click");
   parent.dataset.name = addName;
 }
 

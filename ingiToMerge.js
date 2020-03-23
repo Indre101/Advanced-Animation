@@ -30,12 +30,20 @@ async function moveForwards() {
     }
   }, 50);
   chapterAnimation();
+  listen();
 }
 let clickFunc = function() {
   DraggElement();
-  if (this.dataset.what == "bottom" || this.dataset.what == "img") {
+  const level = document.querySelector(".ImageContainer").dataset.chapter;
+  console.log(level);
+  if (level === "lvl1-p5") {
+    activateAnimation("friction");
+  } else if (level != "lvl1-p5" && level != "lvl1-p3") {
     moveForwards();
   }
+  // if (this.dataset.what == "bottom" || this.dataset.what == "[img]") {
+
+  // }
 };
 
 function chapterAnimation() {
@@ -51,6 +59,8 @@ function chapterAnimation() {
       }
     }
   }
+  //// All of these if statements are checking the current one when beign clicked, after clicking it's moved forwards and the level is higher
+  //// For example here lvl1-p3 is the level before I activate the animation After.
   if (container.dataset.chapter == "lvl1-p3") {
     let whichOne = "After";
     activateAnimation(whichOne);
@@ -60,22 +70,7 @@ function chapterAnimation() {
     let whichOne = "friction";
     activateAnimation(whichOne);
   }
-}
-let count = 0;
-const dofriction = function() {
-  const condition = isOdd(count);
-  if (condition == false) {
-    gsap.to(this, {
-      duration: 0.2,
-      y: +20
-    });
-    gsap.to(this, {
-      duration: 0.2,
-      x: -50
-    });
-  } else if (count == 10) {
-    moveForwards();
-
+  if (container.dataset.chapter == "lvl1-p5") {
     setTimeout(() => {
       const ImageContainer = document.querySelector(".ImageContainer");
       ImageContainer.innerHTML += `<div class="mo-fire">
@@ -98,7 +93,24 @@ const dofriction = function() {
 <path class="flame two" fill="#F36E21" d="M54.918,104.595c0,0-3.959,6.109-1.24,8.949C56.93,113.256,52.228,107.329,54.918,104.595z"/>
 </svg>
 </div>`;
-    }, 100);
+    }, 1020);
+  }
+}
+let count = 0;
+const dofriction = function() {
+  const condition = isOdd(count);
+  if (condition == false) {
+    gsap.to(this, {
+      duration: 0.2,
+      y: +20
+    });
+    gsap.to(this, {
+      duration: 0.2,
+      x: -50
+    });
+    console.log(count);
+  } else if (count == 12) {
+    moveForwards();
   } else {
     gsap.to(this, {
       duration: 0.2,
@@ -116,6 +128,7 @@ const dofriction = function() {
 };
 
 function activateAnimation(whichOne) {
+  listen();
   if (whichOne == "chop") {
     gsap.to(".movableitemContainer", {
       ease: "back.out(2)",
@@ -188,8 +201,14 @@ function activateAnimation(whichOne) {
 }
 
 function listen() {
-  const element = document.querySelectorAll(".click");
-  element.forEach(e => {
-    e.addEventListener("click", (e = clickFunc));
-  });
+  // const element = document.querySelectorAll(".click");
+  // element.forEach(e => {
+  //   e.addEventListener("click", (e = clickFunc));
+  // });
+  setTimeout(() => {
+    const element2 = document.querySelectorAll(".NOTmovableitemContainer");
+    element2.forEach(e => {
+      e.addEventListener("click", (e = clickFunc));
+    });
+  }, 1500);
 }
