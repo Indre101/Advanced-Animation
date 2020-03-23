@@ -1,6 +1,7 @@
 import interact from "interactjs";
 import gsap from "gsap";
 import Snap from "snapsvg";
+
 // enable draggables to be dropped into this
 
 export function DraggElement() {
@@ -45,7 +46,7 @@ interact(".dropzone").dropzone({
   ondrop: function(event) {
     event.target.dataset.moving = "dropped";
     interact(".draggableItem").unset();
-    animateDraggableObjects();
+    AnimateDraggableObjects();
   },
 
   ondropactivate: function(event) {
@@ -53,7 +54,9 @@ interact(".dropzone").dropzone({
   }
 });
 
-function animateDraggableObjects() {
+// ANIMATIONS LEVEL 2
+
+function AnimateDraggableObjects() {
   const ImageContainerChaptervalue = document.querySelector(".ImageContainer")
     .dataset.chapter;
   if (ImageContainerChaptervalue === "lvl2-p2") {
@@ -83,7 +86,8 @@ function animateLightingTheWick() {
         "#oilLampFull",
         "#smallLight",
         "#lightStrokeLarge",
-        1500
+        1500,
+        true
       );
     }
   });
@@ -132,7 +136,8 @@ function animateFlask() {
         "flaskSVG",
         "#pouringliquidOne",
         "#pouringLiquid2",
-        1000
+        1000,
+        flask
       );
     }, 700);
   }, 1000);
@@ -213,7 +218,13 @@ function toMorph(svgId, firstPath, pathToMorphto, duration) {
   morphing();
 }
 
-function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
+function repeatingMorphing(
+  svgId,
+  firstPath,
+  pathToMorphto,
+  duration,
+  infiniteRepeat
+) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
   const firstElement = Snap.select(firstPath);
@@ -239,7 +250,11 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
   };
 
   setTimeout(() => {
-    // firstElement.stop();
+    if (infiniteRepeat === true) {
+      return;
+    } else {
+      firstElement.stop();
+    }
     removeItemFromDisplay(".draggableItem");
     closeTheLampLid();
   }, 4100);

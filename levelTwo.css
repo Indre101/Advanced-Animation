@@ -89,23 +89,3 @@ svg:root {
 #light[data-show="true"] {
   opacity: 1;
 }
-
-/* .firedot {
-  fill: white;
-  animation: blinking 2s linear infinite;
-}
-
-@keyframes blinking {
-  0% {
-    transform: translateY(100px);
-    fill: white;
-    stroke-width: 8;
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-    fill: black;
-    stroke-width: 0;
-  }
-} */
