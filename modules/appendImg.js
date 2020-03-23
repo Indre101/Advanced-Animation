@@ -64,8 +64,9 @@ function addAnimationToTheLampLid() {
     console.log(document.querySelector("#lamp_lid"));
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl1-p4]")) {
     AnimateColloredOilLamp();
-  } else if (document.querySelector("svg[data-name=switch-1")) {
-    const switchElement = document.querySelector("svg[data-name=switch-1");
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
+    console.log("object");
+    const switchElement = document.querySelector("#switchOutline");
     switchElement.addEventListener("click", clickedImage);
   }
 }
@@ -75,13 +76,22 @@ function addAnimationToTheLampLid() {
 function clickedImage() {
   console.log("imageClickde");
 
-  const btnOutline = document.querySelector("#outlinebutton");
-  gsap.to(btnOutline, 1, {
-    rotation: 180,
-    transformOrigin: "center",
-    duration: 1
-  });
-  // toMorph("#switchOne", "#outlinebutton", "#outlineSwitchOn", 1500);
+  const onBtn = document.querySelector("#oneSquare");
+  const offBtn = document.querySelector("#squareSwitchOn");
+  const lightsOne = document.querySelector("#Light-dashesGroupOne");
+  const lightsTwo = document.querySelector("#Light-dashesGroupTwo");
+
+  gsap.to(onBtn, { fill: "black", duration: 0.3, ease: "bounce" });
+  gsap.to(offBtn, { fill: "white", duration: 0.3, ease: "bounce" });
+
+  setTimeout(() => {
+    document.querySelector("#wire").dataset.show = "true";
+    console.log(document.querySelector("#wire"));
+    setTimeout(() => {
+      lightsOne.dataset.show = "true";
+      lightsTwo.dataset.show = "true";
+    }, 2000);
+  }, 300);
 }
 
 // LEVELTWO

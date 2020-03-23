@@ -9,15 +9,7 @@
         "textUpper": "A light bulb is also known as an incandescent light bulb, incandescent lam or an incandescent light globe. The average lifetime of a household light bulb is around 1,000 hours.",
         "instruction": "Tap on the switch to turn on the light bulb"
       },
-      {
-        "id": "lvl3-p2",
-        "media": [
-          { "src": "light-bulb.svg", "draggable": false },
-          { "src": "switch-2.svg", "draggable": false }
-        ],
-        "textUpper": "A light bulb is also known as an incandescent light bulb, incandescent lam or an incandescent light globe. The average lifetime of a household light bulb is around 1,000 hours.",
-        "instruction": "Next"
-      },
+
       {
         "id": "lvl3-p3",
         "media": [{ "src": "phoneman.svg", "draggable": false }],
