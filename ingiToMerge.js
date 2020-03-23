@@ -3,6 +3,7 @@ import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
 import { DraggElement } from "./modules/Draggable";
 import { gsap } from "gsap";
+import { AnimateDraggableObjects } from "./modules/Draggable";
 
 let Stage = 0;
 let Part = 0;

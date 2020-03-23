@@ -40,13 +40,15 @@ function createDraggableContainer(createdSvg, parent, container, img) {
 }
 
 async function createDropZone(img, container) {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const parent = document.createElement("div");
+  // const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
-  svg.innerHTML = svgText;
-  svg.classList.add("dropzone");
-  svg.dataset.moving = "";
-  container.appendChild(svg);
+  parent.innerHTML = svgText;
+  parent.classList.add("dropzone");
+  parent.dataset.moving = "";
+  // parent.appendChild(svg);
+  container.appendChild(parent);
 }
 
 function createNONContainer(parent) {

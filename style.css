@@ -68,6 +68,7 @@ h3 {
   opacity: 0.6;
   filter: drop-shadow(1px 1px 3px darkgrey);
 }
+
 .dropzone[data-moving="activeMoving"] {
   opacity: 0.2;
   border: 1px dashed grey;

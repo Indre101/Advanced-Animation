@@ -57,6 +57,7 @@ interact(".dropzone").dropzone({
 // ANIMATIONS LEVEL 2
 
 function AnimateDraggableObjects() {
+  console.log("object");
   const ImageContainerChaptervalue = document.querySelector(".ImageContainer")
     .dataset.chapter;
   if (ImageContainerChaptervalue === "lvl2-p2") {
@@ -117,9 +118,15 @@ function animateLightingTheWick() {
 // THE FLASK ITEM
 function animateFlask() {
   const flask = document.querySelector(".draggableItem");
+  const flaskContainer = document.querySelector(".movableitemContainer");
+  flaskContainer.dataset.dropped = "true";
+
+  // const tl = gsap.timeline();
+  // tl.to(flaskContainer, { x: +50, y: +50 });
+
+  // flask.dataset.dropped = "true";
+
   gsap.to(flask, {
-    x: 183,
-    y: 258,
     rotation: 100,
     duration: 3
   });
@@ -166,7 +173,6 @@ function closeTheLampLid() {
 }
 
 function fillTheLamp() {
-  console.log("object");
   // THE LAMP LIQUID
   const oilLamp = document.querySelector("#theSquare");
   gsap.fromTo(

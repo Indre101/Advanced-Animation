@@ -27,13 +27,21 @@ svg:root {
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
-  animation: transformLvl2 0.5s ease-in-out forwards 1;
+  /* animation: transformLvl2 0.5s ease-in-out forwards 1; */
+  left: 10%;
+  top: 16%;
   z-index: 11111;
+}
+
+.ImageContainer[data-chapter="lvl2-p2"]
+  .movableitemContainer[data-dropped="true"] {
+  animation: transformLvl2 0.3s ease-in-out forwards 1;
 }
 
 @keyframes transformLvl2 {
   100% {
-    transform: translate(-200px, -200px);
+    left: 20%;
+    top: 34.5%;
   }
 }
 
@@ -42,7 +50,9 @@ svg:root {
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer {
-  animation: transformLvl2Lamp 0.5s ease-in-out forwards 1;
+  /* animation: transformLvl2Lamp 0.5s ease-in-out forwards 1; */
+  top: 75%;
+  left: 70%;
 }
 
 .ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
@@ -51,13 +61,20 @@ svg:root {
 
 @keyframes transformLvl2Lamp {
   100% {
-    transform: translateY(100px);
+    top: 75%;
+    left: 70%;
   }
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone,
 .ImageContainer[data-chapter="lvl2-p3"] .dropzone {
-  transform: translate(-37px, 262px);
+  top: 45%;
+  left: 55%;
+  width: fit-content;
+}
+
+#flaskSVG {
+  width: 200px;
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone svg,
@@ -81,11 +98,11 @@ svg:root {
 #pouringliquidOne,
 #startingPoint,
 #lightStrokeLarge {
-  opacity: 0;
+  display: none;
 }
 
 #pouringliquidOne[data-show="true"],
 #startingPoint[data-show="true"],
 #light[data-show="true"] {
-  opacity: 1;
+  display: block;
 }
