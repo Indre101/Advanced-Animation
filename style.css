@@ -89,3 +89,49 @@ h3 {
   width: 60vw;
   grid-gap: 1vw;
 }
+
+.ImageContainer > .movableitemContainer[data-name="axe"] {
+  top: 10%;
+  left: 10%;
+  width: 150px;
+}
+
+.ImageContainer > div[data-name="woodChopped-1"] {
+  z-index: 0;
+  top: 45%;
+  left: 46%;
+}
+.ImageContainer > div[data-name="woodChopped-2"] {
+  z-index: 10;
+}
+.ImageContainer > div[data-name="stick"] {
+  z-index: 10;
+  top: 70%;
+}
+
+.dropzone[data-name="axe"] {
+  width: 200px;
+  top: 20%;
+}
+.dropzone[data-name="axe"] > svg {
+  width: 100px;
+}
+
+.ImageContainer[data-chapter="lvl1-p4"] > div[data-name="woodChopped-2"] {
+  left: 40%;
+  top: 10%;
+  transform: rotate(-90deg);
+}
+.ImageContainer[data-chapter="lvl1-p4"] > div[data-name="woodChopped-1"] {
+  left: 20%;
+  top: 18%;
+  transform: rotate(-90deg);
+}
+
+.ImageContainer[data-chapter="lvl1-p5"] > div[data-name="frictionWood"] {
+  top: 55%;
+  width: 300px;
+}
+.ImageContainer[data-chapter="lvl1-p5"] > div[data-name="firctionHands"] {
+  top: 30%;
+}
