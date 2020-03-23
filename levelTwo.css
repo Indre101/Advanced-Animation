@@ -23,7 +23,7 @@ svg:root {
 
 .ImageContainer[data-chapter="lvl2-p2"],
 .ImageContainer[data-chapter="lvl2-p3"] {
-  --width: 100px;
+  --width: 200px;
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
