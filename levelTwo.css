@@ -1,7 +1,3 @@
-* {
-  /* vector-effect: non-scaling-stroke; */
-}
-
 svg:root {
   overflow: visible !important;
 }
@@ -42,27 +38,11 @@ svg:root {
   }
 }
 
-/* .ImageContainer[data-chapter="lvl2-p3"]
-  .movableitemContainer[data-droppedmatch="true"] {
-  animation: moveMatch 0.4s linear forwards 1;
-}
-
-@keyframes moveMatch {
-  100% {
-    left: 15%;
-    top: 34%;
-  }
-} */
-
 .ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer,
 .ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
   top: 75%;
   left: 70%;
 }
-/* 
-.ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
-  transform: translateY(100px);
-} */
 
 @keyframes transformLvl2Lamp {
   100% {

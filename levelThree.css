@@ -1,0 +1,8 @@
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(1) {
+  top: 60%;
+}
+
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(2) {
+  left: 8%;
+  top: 35%;
+}

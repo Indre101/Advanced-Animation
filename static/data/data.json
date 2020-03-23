@@ -1,42 +1,5 @@
 [
   {
-    "id": 2,
-    "name": "Oil lamp",
-    "parts": [
-      {
-        "id": "lvl2-p1",
-        "media": [{ "src": "oilLamp.svg", "draggable": false }],
-        "textUpper": "The use of oil lamps began thousands of years ago and continues to this day although not commonly anymore.",
-        "instruction": "Tap on the lamp to open it"
-      },
-      {
-        "id": "lvl2-p2",
-        "media": [
-          { "src": "oilLamp.svg", "draggable": false },
-          { "src": "flask.svg", "draggable": true }
-        ],
-        "textUpper": "An oil lamp is an object used to produce light continuously for a period of time using an oil-based fuel source.",
-        "instruction": "Drag the flask to the lamp to fill it"
-      },
-      {
-        "id": "lvl2-p3",
-        "media": [
-          { "src": "oilLampFull.svg", "draggable": false },
-          { "src": "match.svg", "draggable": true }
-        ],
-        "textUpper": "2 litres  of lamp oil will last about 256 hours. If you burned 6 hours a day, 2 litres of lamp oil would last you about 42 days",
-        "instruction": "Drag the stick to the lamp’s wick to light the lamp"
-      },
-      {
-        "id": "lvl1-p4",
-        "media": [{ "src": "oilLampColoredLight.svg", "draggable": false }],
-        "textUpper": "Oil lamps burned cleaner, with less smoke, than candles and other sources of light before electricity.",
-        "instruction": "Next"
-      }
-    ]
-  },
-
-  {
     "id": 3,
     "name": "Light bulb",
     "parts": [
