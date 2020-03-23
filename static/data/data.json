@@ -32,8 +32,8 @@
         "id": "lvl1-p3",
         "media": [
           { "src": "axe.svg", "draggable": true },
-          { "src": "woodChopped-1.svg", "draggable": false },
-          { "src": "woodChopped-2.svg", "draggable": false }
+          { "src": "woodChopped-2.svg", "draggable": false },
+          { "src": "woodChopped-1.svg", "draggable": false }
         ],
         "textUpper": "Firewood would be cut to smaller pieces for Easier fire ignition",
         "instruction": "Cut the firewood"

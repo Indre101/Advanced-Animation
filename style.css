@@ -5,6 +5,7 @@
 body {
   height: 100vh;
   width: 100vw;
+  background-color: pink;
 }
 
 .Story {
@@ -51,24 +52,28 @@ h3 {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 30vw;
   transform: translate(-50%, -50%);
 }
-.movableitemContainer {
+.ImageContainer .movableitemContainer {
   width: 10vw;
   grid-area: 1/1 / span 1 / span 1;
   order: -1;
-  align-self: flex-start;
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
 }
 
 .movableitemContainer svg {
   z-index: 10000;
+  width: 15vw;
 }
 .NOTmovableitemContainer {
   width: 15vw;
 }
 
 .dropzone {
-  width: 10vw;
+  width: 15vw;
   transition: filter 0.3s, opacity 0.3s;
   opacity: 0;
   height: fit-content;

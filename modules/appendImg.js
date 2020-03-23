@@ -45,6 +45,7 @@ async function createDropZone(img, container) {
   const svgText = await responseSvg.text();
   svg.innerHTML = svgText;
   svg.classList.add("dropzone");
+  svg.dataset.moving = "";
   container.appendChild(svg);
 }
 
