@@ -1,5 +1,72 @@
 [
   {
+    "id": 0,
+    "name": "Start",
+    "parts": [
+      {
+        "id": "lvl0-p0",
+        "media": [{ "src": "play.svg", "draggable": false }],
+        "textUpper": "How controlling light changed the world.",
+        "instruction": "A short interactive experience"
+      }
+    ]
+  },
+
+  {
+    "id": 1,
+    "name": "Fire",
+    "parts": [
+      {
+        "id": "lvl1-p1",
+        "media": [{ "src": "woodPiece.svg", "draggable": false }],
+        "textUpper": "The earliest evidence for fire dates back nearly 440 million years. Our ancestors first used natural wildfires to flush out prey and forage for food.",
+        "instruction": "Tap on the wood to pick it up"
+      },
+      {
+        "id": "lvl1-p2",
+        "media": [{ "src": "axe.svg", "draggable": false }],
+        "textUpper": "In addition to the many benefits that fire provided to early humans, it also had a major impact on the innovation of tool.",
+        "instruction": "Tap on the axe to pick it up"
+      },
+      {
+        "id": "lvl1-p3",
+        "media": [
+          { "src": "axe.svg", "draggable": true },
+          { "src": "woodChopped-1.svg", "draggable": false },
+          { "src": "woodChopped-2.svg", "draggable": false }
+        ],
+        "textUpper": "Firewood would be cut to smaller pieces for Easier fire ignition",
+        "instruction": "Cut the firewood"
+      },
+      {
+        "id": "lvl1-p4",
+        "media": [
+          { "src": "stick.svg", "draggable": false },
+          { "src": "woodChopped-1.svg", "draggable": false },
+          { "src": "woodChopped-2.svg", "draggable": false }
+        ],
+        "textUpper": "Firewood and stick acquired",
+        "instruction": "Pick up the stick to continue"
+      },
+      {
+        "id": "lvl1-p5",
+        "media": [
+          { "src": "frictionWood.svg", "draggable": false },
+          { "src": "firctionHands.svg", "draggable": true }
+        ],
+        "textUpper": "People to this day use the  ability to make fire with friction",
+        "instruction": "Create friction by tapping"
+      },
+
+      {
+        "id": "lvl1-p6",
+        "media": [{ "src": "endingOne.svg", "draggable": false }],
+        "textUpper": "Humans’ ability to control fire is among the most important technological advances in our evolutionary history.",
+        "instruction": "Next"
+      }
+    ]
+  },
+  {
     "id": 2,
     "name": "Oil lamp",
     "parts": [

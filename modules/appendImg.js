@@ -30,6 +30,7 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
+  addAnimationToTheLampLid();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
