@@ -29,7 +29,7 @@
       },
       {
         "id": "lvl1-p4",
-        "media": [{ "src": "oilLampFull.svg", "draggable": false }],
+        "media": [{ "src": "oilLampColoredLight.svg", "draggable": false }],
         "textUpper": "Oil lamps burned cleaner, with less smoke, than candles and other sources of light before electricity.",
         "instruction": "Next"
       }

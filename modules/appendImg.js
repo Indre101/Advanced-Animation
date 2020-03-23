@@ -1,4 +1,5 @@
-import interact from "interactjs";
+import gsap from "gsap";
+import Snap from "snapsvg";
 
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
@@ -60,4 +61,68 @@ function addAnimationToTheLampLid() {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
     console.log(document.querySelector("#lamp_lid"));
   }
+  if (document.querySelector(".ImageContainer[data-chapter=lvl1-p4]")) {
+    AnimateColloredOilLamp();
+  }
+}
+
+export function AnimateColloredOilLamp() {
+  console.log("object");
+  repeatingMorphing(
+    "#oiLampColorised",
+    "#smallLight",
+    "#lightStrokeLarge",
+    1200
+  );
+  setTimeout(() => {
+    gsap.fromTo(
+      ".firedot",
+      {
+        y: 100,
+        scale: 0.2,
+        duration: 5,
+        opacity: 0,
+        ease: "stepped",
+        repeat: -1
+      },
+      {
+        y: 0,
+        scale: 1.2,
+        duration: 5,
+        opacity: 1,
+        stagger: 0.5,
+        ease: "stepped",
+        repeat: -1
+      }
+    );
+  }, 1000);
+}
+
+function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
+  document.querySelector("#light").dataset.show = "true";
+
+  const svg = document.querySelector(svgId);
+  const s = Snap(svg);
+  const firstElement = Snap.select(firstPath);
+  const secondElement = Snap.select(pathToMorphto);
+  const firstElementPoints = firstElement.node.getAttribute("d");
+  const secondElementPoints = secondElement.node.getAttribute("d");
+
+  const toPreviousPath = function() {
+    firstElement.animate(
+      { d: secondElementPoints },
+      duration,
+      mina.backout,
+      toNextPath
+    );
+  };
+  const toNextPath = function() {
+    firstElement.animate(
+      { d: firstElementPoints },
+      duration,
+      mina.backout,
+      toPreviousPath
+    );
+  };
+  toNextPath();
 }
