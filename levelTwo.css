@@ -17,16 +17,13 @@ svg:root {
   }
 }
 
-#light {
-  opacity: 0;
-}
-
 .ImageContainer[data-chapter="lvl2-p2"],
 .ImageContainer[data-chapter="lvl2-p3"] {
   --width: 200px;
 }
 
-.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer {
+.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer,
+.ImageContainer[data-chapter="lvl2-p3"] .movableitemContainer {
   /* animation: transformLvl2 0.5s ease-in-out forwards 1; */
   left: 10%;
   top: 16%;
@@ -45,19 +42,19 @@ svg:root {
   }
 }
 
-.ImageContainer[data-chapter="lvl2-p3"] .movableitemContainer {
+/* .ImageContainer[data-chapter="lvl2-p3"] .movableitemContainer {
   transform: translate(-200px, -200px);
-}
+} */
 
-.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer {
-  /* animation: transformLvl2Lamp 0.5s ease-in-out forwards 1; */
+.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer,
+.ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
   top: 75%;
   left: 70%;
 }
-
+/* 
 .ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
   transform: translateY(100px);
-}
+} */
 
 @keyframes transformLvl2Lamp {
   100% {
@@ -77,10 +74,14 @@ svg:root {
   width: 200px;
 }
 
+.ImageContainer[data-chapter="lvl2-p3"] .draggableItem,
+#theMatch {
+  width: 150px;
+}
+
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone svg,
 .ImageContainer[data-chapter="lvl2-p3"] svg {
   width: var(----width);
-  x: calc(15vw - 100px);
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer svg,
@@ -97,12 +98,15 @@ svg:root {
 #pouringLiquid2,
 #pouringliquidOne,
 #startingPoint,
-#lightStrokeLarge {
+#lightStrokeLarge,
+#light {
   display: none;
+  opacity: 0;
 }
 
 #pouringliquidOne[data-show="true"],
 #startingPoint[data-show="true"],
 #light[data-show="true"] {
   display: block;
+  opacity: 1;
 }

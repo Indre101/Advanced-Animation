@@ -28,13 +28,13 @@ function dragMoveListener(event) {
 }
 
 interact(".dropzone").dropzone({
-  // only accept elements matching this CSS selector
   accept: ".draggableItem",
   // Require a 75% element overlap for a drop to be possible
-  overlap: 0.75,
+  overlap: 0.5,
 
   ondragenter: function(event) {
     // feedback the possibility of a drop
+    console.log(event);
     event.target.dataset.moving = "hovering";
   },
 
@@ -45,8 +45,8 @@ interact(".dropzone").dropzone({
 
   ondrop: function(event) {
     event.target.dataset.moving = "dropped";
-    interact(".draggableItem").unset();
     AnimateDraggableObjects();
+    interact(".draggableItem").unset();
   },
 
   ondropactivate: function(event) {
@@ -57,7 +57,6 @@ interact(".dropzone").dropzone({
 // ANIMATIONS LEVEL 2
 
 function AnimateDraggableObjects() {
-  console.log("object");
   const ImageContainerChaptervalue = document.querySelector(".ImageContainer")
     .dataset.chapter;
   if (ImageContainerChaptervalue === "lvl2-p2") {
@@ -70,10 +69,6 @@ function AnimateDraggableObjects() {
 
 function animateLightingTheWick() {
   const theMatch = document.querySelector(".draggableItem");
-  console.log(theMatch);
-  console.log(document.querySelector("#oilLampFull"));
-  console.log(document.querySelector("#lightStrokeLarge"));
-  console.log(document.querySelector("#smallLight"));
 
   const tl = gsap.timeline();
 
@@ -99,7 +94,7 @@ function animateLightingTheWick() {
       y: 100,
       scale: 0.2,
       duration: 5,
-      opacity: 1,
+      opacity: 0,
       ease: "stepped",
       repeat: -1
     },
@@ -107,7 +102,7 @@ function animateLightingTheWick() {
       y: 0,
       scale: 1.2,
       duration: 5,
-      opacity: 0,
+      opacity: 1,
       stagger: 0.5,
       ease: "stepped",
       repeat: -1
@@ -136,9 +131,9 @@ function animateFlask() {
     document.querySelector("#startingPoint").dataset.show = "true";
     toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne", 1000);
     turnTheLid();
+    fillTheLamp();
     setTimeout(() => {
       document.querySelector("#pouringliquidOne").dataset.show = "true";
-      fillTheLamp();
       repeatingMorphing(
         "flaskSVG",
         "#pouringliquidOne",

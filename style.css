@@ -64,6 +64,7 @@ h3 {
   opacity: 0;
   position: absolute;
 }
+
 .dropzone[data-moving="hovering"] {
   opacity: 0.6;
   filter: drop-shadow(1px 1px 3px darkgrey);
