@@ -50,15 +50,17 @@ let clickFunc = function() {
 function chapterAnimation() {
   const container = document.querySelector(".ImageContainer");
   if (container.dataset.chapter == "lvl1-p2") {
-    const check = setInterval(isDropped, 1000);
-    function isDropped() {
-      const dropZone = document.querySelector(".dropzone");
-      if (dropZone.dataset.moving == "dropped") {
-        clearInterval(check);
-        let whichOne = "chop";
-        activateAnimation(whichOne);
+    setTimeout(() => {
+      const check = setInterval(isDropped, 1000);
+      function isDropped() {
+        const dropZone = document.querySelector(".dropzone");
+        if (dropZone.dataset.moving == "dropped") {
+          clearInterval(check);
+          let whichOne = "chop";
+          activateAnimation(whichOne);
+        }
       }
-    }
+    }, 1000);
   }
   //// All of these if statements are checking the current one when beign clicked, after clicking it's moved forwards and the level is higher
   //// For example here lvl1-p3 is the level before I activate the animation After.
