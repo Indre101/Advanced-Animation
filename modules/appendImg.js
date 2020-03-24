@@ -1,17 +1,28 @@
 import gsap from "gsap";
 import Snap from "snapsvg";
-
+import interact from "interactjs";
+import { gsap } from "gsap";
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
-  ImageContainer.innerHTML = "";
-  ImageContainer.dataset.chapter = data[0].id;
-  if (data[0].media.length > 0) {
-    data[0].media.forEach(e => {
-      createSvg(e, ImageContainer);
+  gsap.to(ImageContainer, {
+    duration: 1,
+    opacity: 0
+  });
+  setTimeout(() => {
+    ImageContainer.innerHTML = "";
+    gsap.to(ImageContainer, {
+      duration: 1,
+      opacity: 1
     });
-  } else {
-    createSvg(data[0].media[0], ImageContainer);
-  }
+    ImageContainer.dataset.chapter = data[0].id;
+    if (data[0].media.length > 0) {
+      data[0].media.forEach(e => {
+        createSvg(e, ImageContainer);
+      });
+    } else {
+      createSvg(data[0].media[0], ImageContainer);
+    }
+  }, 1000);
 };
 
 async function createSvg(img, container) {
@@ -21,14 +32,15 @@ async function createSvg(img, container) {
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
   // svg.setAttribute("href", `images/level-images/${img}`);
-  svg.setAttribute("class", `IMGclicked click`);
+  svg.setAttribute("class", `IMGclicked`);
   svg.setAttribute("viewBox", "0 0 300 300");
   svg.setAttribute("class", "svgContainer");
   svg.dataset.name = img.src.substring(0, img.src.length - 4);
   svg.innerHTML = svgText;
+  const addName = img.src.substring(0, img.src.length - 4);
   img.draggable
     ? createDraggableContainer(svg, parent, container, img)
-    : createNONContainer(parent);
+    : createNONContainer(parent, addName);
   parent.appendChild(svg);
   container.appendChild(parent);
   addAnimationsToElements();
@@ -36,6 +48,7 @@ async function createSvg(img, container) {
 
 function createDraggableContainer(createdSvg, parent, container, img) {
   parent.classList.add("movableitemContainer");
+  parent.dataset.name = img.src.substring(0, img.src.length - 4);
   createdSvg.classList.add(`draggableItem`);
   createDropZone(img, container);
 }
@@ -48,12 +61,15 @@ async function createDropZone(img, container) {
   parent.innerHTML = svgText;
   parent.classList.add("dropzone");
   parent.dataset.moving = "";
+  parent.dataset.name = img.src.substring(0, img.src.length - 4);
   // parent.appendChild(svg);
   container.appendChild(parent);
 }
 
-function createNONContainer(parent) {
+function createNONContainer(parent, addName) {
   parent.classList.add("NOTmovableitemContainer");
+  parent.classList.add("click");
+  parent.dataset.name = addName;
 }
 
 // ANIMATION PARTS

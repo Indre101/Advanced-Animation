@@ -42,8 +42,8 @@
         "id": "lvl1-p4",
         "media": [
           { "src": "stick.svg", "draggable": false },
-          { "src": "woodChopped-1.svg", "draggable": false },
-          { "src": "woodChopped-2.svg", "draggable": false }
+          { "src": "woodChopped-2.svg", "draggable": false },
+          { "src": "woodChopped-1.svg", "draggable": false }
         ],
         "textUpper": "Firewood and stick acquired",
         "instruction": "Pick up the stick to continue"
@@ -52,7 +52,7 @@
         "id": "lvl1-p5",
         "media": [
           { "src": "frictionWood.svg", "draggable": false },
-          { "src": "firctionHands.svg", "draggable": true }
+          { "src": "firctionHands.svg", "draggable": false }
         ],
         "textUpper": "People to this day use the  ability to make fire with friction",
         "instruction": "Create friction by tapping"
