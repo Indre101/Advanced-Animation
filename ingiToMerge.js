@@ -65,8 +65,10 @@ function chapterAnimation() {
   //// All of these if statements are checking the current one when beign clicked, after clicking it's moved forwards and the level is higher
   //// For example here lvl1-p3 is the level before I activate the animation After.
   if (container.dataset.chapter == "lvl1-p3") {
-    let whichOne = "After";
-    activateAnimation(whichOne);
+    setTimeout(() => {
+      let whichOne = "After";
+      activateAnimation(whichOne);
+    }, 1000);
   }
 
   if (container.dataset.chapter == "lvl1-p4") {
