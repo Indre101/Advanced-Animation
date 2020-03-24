@@ -204,7 +204,7 @@ function activateAnimation(whichOne) {
     setTimeout(() => {
       const hands = document.querySelector(`[data-name="firctionHands"]`);
       hands.addEventListener("click", dofriction);
-    }, 1000);
+    }, 2000);
   }
 }
 
