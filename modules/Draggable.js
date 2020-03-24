@@ -84,12 +84,12 @@ export function AnimateLightingTheWick(moveForwards) {
         "#smallLight",
         "#lightStrokeLarge",
         1500,
-        true,
-        moveForwards
+        true
       );
+
       setTimeout(() => {
         moveForwards();
-      }, 2000);
+      }, 2500);
     }
   });
 
@@ -144,9 +144,12 @@ export function AnimateFlask(moveForwards) {
         "#pouringliquidOne",
         "#pouringLiquid2",
         1000,
-        flask,
-        moveForwards
+        flask
       );
+
+      setTimeout(() => {
+        moveForwards();
+      }, 5000);
     }, 700);
   }, 1000);
 }
@@ -162,19 +165,14 @@ function turnTheLid() {
   });
 }
 
-function closeTheLampLid(moveForwards) {
+function closeTheLampLid() {
   const lampLid = document.querySelector("#lamp_lid");
 
   gsap.to(lampLid, {
     rotation: 0,
     transformOrigin: "bottom right",
     duration: 0.5,
-    ease: "bounce",
-    onComplete: function() {
-      setTimeout(() => {
-        moveForwards();
-      }, 1000);
-    }
+    ease: "bounce"
   });
 }
 
@@ -235,8 +233,7 @@ function repeatingMorphing(
   firstPath,
   pathToMorphto,
   duration,
-  infiniteRepeat,
-  moveForwards
+  infiniteRepeat
 ) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
@@ -267,9 +264,9 @@ function repeatingMorphing(
       return;
     } else {
       firstElement.stop();
+      closeTheLampLid();
     }
     removeItemFromDisplay(".draggableItem");
-    closeTheLampLid(moveForwards);
   }, 4100);
   toNextPath();
 }

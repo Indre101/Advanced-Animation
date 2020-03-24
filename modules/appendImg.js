@@ -87,7 +87,7 @@ function addAnimationsToElements() {
 
 // LEVEL THREE
 
-function clickedImage() {
+export function clickedImage() {
   const onBtn = document.querySelector("#oneSquare");
   const offBtn = document.querySelector("#squareSwitchOn");
   const lightsOne = document.querySelector("#Light-dashesGroupOne");
@@ -109,7 +109,7 @@ function clickedImage() {
 
 // LEVELTWO
 
-export function AnimateColloredOilLamp() {
+function AnimateColloredOilLamp() {
   repeatingMorphing(
     "#oiLampColorised",
     "#smallLight",

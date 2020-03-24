@@ -3,21 +3,49 @@ import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
 import { DraggElement } from "./modules/Draggable";
 import { gsap } from "gsap";
+// import {}
 
 let Stage = 0;
 let Part = 0;
 document.addEventListener("DOMContentLoaded", datacheck(0, 0));
 document.addEventListener("DOMContentLoaded", listen);
-async function datacheck(Stages, Parts) {
+async function datacheck() {
   const data = await GetJsonData(Stage, Part);
   AppendText(data);
   AppendImg(data);
   activateAnimation();
 }
+
+let clicked = 0;
 async function moveForwards() {
+  console.log(Stage, Part);
   let where = await GetJsonData(Stage);
   setTimeout(() => {
-    if (Part + 1 < where[0].parts.length) {
+    if (Stage === 1 && Part === 5) {
+      Stage = 2;
+      Part = 0;
+      datacheck();
+      return;
+    } else if (Stage === 2 && Part === 0) {
+      Part = 1;
+      datacheck();
+      return;
+    } else if (Stage === 2 && Part === 1) {
+      Part = 2;
+      return;
+    } else if (Stage === 2 && Part === 2) {
+      datacheck();
+      Part = 3;
+      return;
+    } else if (Stage === 2 && Part === 3) {
+      console.log("Part is Three");
+      Part = 4;
+      return;
+    } else if (Stage === 2 && Part === 4) {
+      console.log("this is part 4");
+      // datacheck();
+      return;
+    } else if (Part + 1 < where[0].parts.length) {
       Part++;
       datacheck();
     } else if (Stage == 3 && Part + 1 == where[0].parts.length) {
@@ -25,7 +53,6 @@ async function moveForwards() {
     } else {
       Part = 0;
       Stage++;
-
       datacheck();
     }
   }, 50);
@@ -45,7 +72,13 @@ let clickFunc = function() {
         .querySelector("#LightBulbCirlce")
         .addEventListener("click", moveForwards);
     }, 5000);
-  } else if (level != "lvl1-p5" && level != "lvl1-p3") {
+  } else if (
+    level != "lvl1-p5" &&
+    level != "lvl1-p3" &&
+    level !== "lvl2-p2" &&
+    level !== "lvl2-p3"
+  ) {
+    console.log("another third if");
     moveForwards();
   }
   // if (this.dataset.what == "bottom" || this.dataset.what == "[img]") {
