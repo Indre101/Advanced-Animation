@@ -1,0 +1,176 @@
+svg:root {
+  overflow: visible !important;
+}
+
+#lamp_lid[data-lifted="true"] {
+  animation: liftTheLid 0.3s 0.5s ease-in-out 1;
+  transform-origin: bottom;
+}
+
+@keyframes liftTheLid {
+  100% {
+    transform: translateY(-10vw);
+  }
+}
+
+.ImageContainer[data-chapter="lvl2-p2"],
+.ImageContainer[data-chapter="lvl2-p3"] {
+  --width: 200px;
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer,
+.ImageContainer[data-chapter="lvl2-p3"] .movableitemContainer {
+  /* animation: transformLvl2 0.5s ease-in-out forwards 1; */
+  left: 10%;
+  top: 16%;
+  z-index: 11111;
+}
+
+.ImageContainer[data-chapter="lvl2-p2"]
+  .movableitemContainer[data-dropped="true"] {
+  animation: transformLvl2 0.3s ease-in-out forwards 1;
+}
+
+@keyframes transformLvl2 {
+  100% {
+    left: 20%;
+    top: 34.5%;
+  }
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer,
+.ImageContainer[data-chapter="lvl2-p3"] .NOTmovableitemContainer {
+  top: 75%;
+  left: 70%;
+}
+
+@keyframes transformLvl2Lamp {
+  100% {
+    top: 75%;
+    left: 70%;
+  }
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .dropzone,
+.ImageContainer[data-chapter="lvl2-p3"] .dropzone {
+  top: 45%;
+  left: 55%;
+  width: fit-content;
+}
+
+#flaskSVG {
+  width: 200px;
+}
+
+.ImageContainer[data-chapter="lvl2-p3"] .draggableItem,
+#theMatch {
+  width: 150px;
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .dropzone svg,
+.ImageContainer[data-chapter="lvl2-p3"] svg {
+  width: var(----width);
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer svg,
+.ImageContainer[data-chapter="lvl2-p3"] svg {
+  width: var(----width);
+}
+
+.ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer svg,
+.ImageContainer[data-chapter="lvl2-p3"] svg {
+  width: var(----width);
+}
+
+#ShiftedLiquid,
+#pouringLiquid2,
+#pouringliquidOne,
+#startingPoint,
+#lightStrokeLarge,
+#light {
+  display: none;
+  opacity: 0;
+}
+
+#pouringliquidOne[data-show="true"],
+#startingPoint[data-show="true"],
+#light[data-show="true"] {
+  display: block;
+  opacity: 1;
+}
+
+/* LEVEL THREE */
+
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(1) {
+  top: 60%;
+  width: 50%;
+}
+
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(2) {
+  left: 8%;
+  top: 35%;
+}
+
+#wire,
+#Light-dashesGroupOne,
+#Light-dashesGroupTwo {
+  fill: none;
+  opacity: 0;
+}
+
+#wire[data-show="true"] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 2s linear 1 forwards;
+  opacity: 0;
+}
+
+@keyframes dash {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+#Light-dashesGroupOne[data-show="true"] {
+  animation: blink 0.8s ease-in-out alternate infinite;
+  /* fill: #fff; */
+  opacity: 0;
+}
+
+#Light-dashesGroupOne[data-show="true"] path,
+#Light-dashesGroupTwo[data-show="true"] path {
+  animation: animateFill 0.5s ease-in-out infinite alternate;
+  fill: white;
+}
+
+@keyframes animateFill {
+  0% {
+    fill: white;
+  }
+  100% {
+    fill: #fffc55;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#Light-dashesGroupTwo[data-show="true"] {
+  /* fill: #fff; */
+  animation: blink 0.8s 0.8s ease-in-out alternate infinite;
+}
+
+#LightBulbCirlce[data-show="true"] {
+  animation: animateFill 0.5s ease-in-out 1 forwards;
+}

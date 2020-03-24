@@ -1,4 +1,5 @@
-import interact from "interactjs";
+import gsap from "gsap";
+import Snap from "snapsvg";
 
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
@@ -30,7 +31,7 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
-  addAnimationToTheLampLid();
+  addAnimationsToElements();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
@@ -40,22 +41,133 @@ function createDraggableContainer(createdSvg, parent, container, img) {
 }
 
 async function createDropZone(img, container) {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const parent = document.createElement("div");
+  // const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   const responseSvg = await fetch(`images/level-images/${img.src}`);
   const svgText = await responseSvg.text();
-  svg.innerHTML = svgText;
-  svg.classList.add("dropzone");
-  svg.dataset.moving = "";
-  container.appendChild(svg);
+  parent.innerHTML = svgText;
+  parent.classList.add("dropzone");
+  parent.dataset.moving = "";
+  // parent.appendChild(svg);
+  container.appendChild(parent);
 }
 
 function createNONContainer(parent) {
   parent.classList.add("NOTmovableitemContainer");
 }
 
-function addAnimationToTheLampLid() {
+// ANIMATION PARTS
+
+function addAnimationsToElements() {
   if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
     console.log(document.querySelector("#lamp_lid"));
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl1-p4]")) {
+    AnimateColloredOilLamp();
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
+    console.log("object");
+    const switchElement = document.querySelector("#switchPart");
+    switchElement.addEventListener("click", clickedImage);
   }
+}
+
+// LEVEL THREE
+
+function clickedImage() {
+  const onBtn = document.querySelector("#oneSquare");
+  const offBtn = document.querySelector("#squareSwitchOn");
+  const lightsOne = document.querySelector("#Light-dashesGroupOne");
+  const lightsTwo = document.querySelector("#Light-dashesGroupTwo");
+  const lightBulb = document.querySelector("#LightBulbCirlce");
+
+  gsap.to(onBtn, { fill: "black", duration: 0.3, ease: "bounce" });
+  gsap.to(offBtn, { fill: "white", duration: 0.3, ease: "bounce" });
+
+  setTimeout(() => {
+    document.querySelector("#wire").dataset.show = "true";
+    console.log(document.querySelector("#wire"));
+    setTimeout(() => {
+      lightsOne.dataset.show = "true";
+      lightsTwo.dataset.show = "true";
+      lightBulb.dataset.show = "true";
+    }, 2000);
+  }, 300);
+}
+
+// LEVELTWO
+
+export function AnimateColloredOilLamp() {
+  console.log("object");
+  repeatingMorphing(
+    "#oiLampColorised",
+    "#smallLight",
+    "#lightStrokeLarge",
+    1200
+  );
+  setTimeout(() => {
+    gsap.fromTo(
+      ".firedot",
+      {
+        y: 100,
+        scale: 0.2,
+        duration: 5,
+        opacity: 0,
+        ease: "stepped",
+        repeat: -1
+      },
+      {
+        y: 0,
+        scale: 1.2,
+        duration: 5,
+        opacity: 1,
+        stagger: 0.5,
+        ease: "stepped",
+        repeat: -1
+      }
+    );
+  }, 1000);
+}
+
+// ANIMATIONS
+function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
+  document.querySelector("#light").dataset.show = "true";
+
+  const svg = document.querySelector(svgId);
+  const s = Snap(svg);
+  const firstElement = Snap.select(firstPath);
+  const secondElement = Snap.select(pathToMorphto);
+  const firstElementPoints = firstElement.node.getAttribute("d");
+  const secondElementPoints = secondElement.node.getAttribute("d");
+
+  const toPreviousPath = function() {
+    firstElement.animate(
+      { d: secondElementPoints },
+      duration,
+      mina.backout,
+      toNextPath
+    );
+  };
+  const toNextPath = function() {
+    firstElement.animate(
+      { d: firstElementPoints },
+      duration,
+      mina.backout,
+      toPreviousPath
+    );
+  };
+  toNextPath();
+}
+
+function toMorph(svgId, firstPath, pathToMorphto, duration) {
+  const svg = document.querySelector(svgId);
+  const s = Snap(svg);
+  const firstElement = Snap.select(firstPath);
+  const secondElement = Snap.select(pathToMorphto);
+  const firstElementPoints = firstElement.node.getAttribute("d");
+  const secondElementPoints = secondElement.node.getAttribute("d");
+
+  const morphing = function() {
+    firstElement.animate({ d: secondElementPoints }, duration, mina.easeout);
+  };
+  morphing();
 }

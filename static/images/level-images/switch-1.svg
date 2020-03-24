@@ -1,28 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
-	.st1{fill:#F2F2F2;}
-	.st2{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:8;stroke-miterlimit:10;}
-	.st3{opacity:0.2;fill:#FFFFFF;enable-background:new    ;}
-	.st4{display:none;opacity:0.2;fill:#FFFFFF;enable-background:new    ;}
-	.st5{display:none;fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
-</style>
-<path class="st0" d="M425.5,470.3c-0.1,11.8-9.7,21.3-21.5,21.2l-298.7-1.7c-11.8-0.1-21.3-9.7-21.2-21.5l2.4-426.7
-	C86.6,30,96.2,20.4,108,20.5l298.7,1.7c11.8,0.1,21.3,9.7,21.2,21.5L425.5,470.3z"/>
-<path class="st0" d="M320.1,244l0.6-104.9c0-5.9-4.7-10.7-10.6-10.7l-106.7-0.6c-5.9,0-10.7,4.7-10.7,10.6l-1.2,213.3
-	c0,5.9,4.7,10.7,10.6,10.7l96,0.5c3.4,0,6.5-1.5,8.6-4.2l32.2-42.5c2.1-2.8,2.7-6.4,1.6-9.8L320.1,244z"/>
-<polygon class="st0" points="315.6,299 241,298.6 219.9,255.8 301.6,256.3 "/>
-<polygon class="st1" points="213,319.8 213.1,290.3 221.9,308 "/>
-<polygon class="st2" points="214.6,290.3 214.3,326.9 224.8,312.8 "/>
-<g>
-	
-		<rect x="213.7" y="149.3" transform="matrix(5.555383e-03 -1 1 5.555383e-03 62.9334 447.2849)" class="st0" width="85.3" height="85.3"/>
-	<polygon class="st0" points="292.9,341.5 223.5,341.2 239.6,319.9 309,320.3 	"/>
-</g>
-<polygon class="st3" points="292.9,341.5 223.5,341.2 239.6,319.9 309,320.3 "/>
-<circle class="st0" cx="257.1" cy="64" r="21.3"/>
-<circle class="st0" cx="254.9" cy="448" r="21.3"/>
+<svg id="switchOne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351.7 478.98">
+  <title>Asset 6</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Capa_1" data-name="Capa 1">
+      <path d="M345.33,453.77A21.35,21.35,0,0,1,323.88,475L25.21,473.33A21.36,21.36,0,0,1,4,451.87L6.37,25.21A21.35,21.35,0,0,1,27.82,4L326.48,5.66A21.35,21.35,0,0,1,347.7,27.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <polygon points="132.83 303.26 132.99 273.76 141.75 291.51 132.83 303.26" fill="#f2f2f2"/>
+      <g id="button">
+        <g id="switchbutton">
+          <path id="outlineSwitchOn" d="M101.77,230.14l-.59,104.94a10.67,10.67,0,0,0,10.61,10.72l106.67.59a10.65,10.65,0,0,0,10.72-10.6l1.19-213.33a10.66,10.66,0,0,0-10.61-10.73l-96-.53a10.67,10.67,0,0,0-8.56,4.22L83,157.91a10.72,10.72,0,0,0-1.64,9.76Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <path id="outlinebutton" d="M239.92,227.45l.58-104.93a10.66,10.66,0,0,0-10.61-10.73l-106.66-.59a10.66,10.66,0,0,0-10.73,10.61l-1.18,213.33a10.65,10.65,0,0,0,10.6,10.72l96,.53a10.68,10.68,0,0,0,8.57-4.22l32.23-42.49a10.69,10.69,0,0,0,1.64-9.76Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
+          <rect id="squareSwitchOn" x="134.25" y="239.82" width="85.33" height="85.33" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-106.55 457.83) rotate(-89.68)"/>
+          <g id="switchOnBtn">
+            <polygon points="214.22 132.67 145.77 132.96 161.69 161.28 230.13 161 214.22 132.67" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <polygon points="236.72 175.24 162.12 175.56 140.96 218.31 222.68 217.97 236.72 175.24" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <polygon points="135.64 183.83 135.48 147.24 145.89 161.35 135.64 183.83" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="8"/>
+          </g>
+          <polygon points="212.71 325.03 143.38 324.65 159.5 303.4 228.82 303.79 212.71 325.03" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <polygon points="235.47 282.49 160.87 282.08 139.77 239.29 221.49 239.75 235.47 282.49" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+          <polygon points="134.4 273.77 134.2 310.36 144.63 296.26 134.4 273.77" fill="#fff" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="8"/>
+        </g>
+      </g>
+      <circle cx="176.92" cy="47.5" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <circle cx="174.78" cy="431.49" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+    </g>
+  </g>
 </svg>

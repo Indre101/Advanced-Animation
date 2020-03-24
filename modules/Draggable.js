@@ -28,13 +28,13 @@ function dragMoveListener(event) {
 }
 
 interact(".dropzone").dropzone({
-  // only accept elements matching this CSS selector
   accept: ".draggableItem",
   // Require a 75% element overlap for a drop to be possible
-  overlap: 0.75,
+  overlap: 0.5,
 
   ondragenter: function(event) {
     // feedback the possibility of a drop
+    console.log(event);
     event.target.dataset.moving = "hovering";
   },
 
@@ -45,8 +45,8 @@ interact(".dropzone").dropzone({
 
   ondrop: function(event) {
     event.target.dataset.moving = "dropped";
-    interact(".draggableItem").unset();
     AnimateDraggableObjects();
+    interact(".draggableItem").unset();
   },
 
   ondropactivate: function(event) {
@@ -69,14 +69,12 @@ function AnimateDraggableObjects() {
 
 function animateLightingTheWick() {
   const theMatch = document.querySelector(".draggableItem");
-  console.log(theMatch);
-  console.log(document.querySelector("#oilLampFull"));
-  console.log(document.querySelector("#lightStrokeLarge"));
-  console.log(document.querySelector("#smallLight"));
+  const theMatchContainer = document.querySelector(".movableitemContainer");
+  // theMatchContainer.dataset.droppedmatch = "true";
 
   const tl = gsap.timeline();
 
-  tl.to(theMatch, { x: 70, y: 245, duration: 3 }).to(theMatch, {
+  tl.to(theMatchContainer, { x: -15, y: 105, duration: 0.4 }).to(theMatch, {
     rotation: 30,
     duration: 1,
     onComplete: function() {
@@ -98,7 +96,7 @@ function animateLightingTheWick() {
       y: 100,
       scale: 0.2,
       duration: 5,
-      opacity: 1,
+      opacity: 0,
       ease: "stepped",
       repeat: -1
     },
@@ -106,7 +104,7 @@ function animateLightingTheWick() {
       y: 0,
       scale: 1.2,
       duration: 5,
-      opacity: 0,
+      opacity: 1,
       stagger: 0.5,
       ease: "stepped",
       repeat: -1
@@ -117,9 +115,15 @@ function animateLightingTheWick() {
 // THE FLASK ITEM
 function animateFlask() {
   const flask = document.querySelector(".draggableItem");
+  const flaskContainer = document.querySelector(".movableitemContainer");
+  flaskContainer.dataset.dropped = "true";
+
+  // const tl = gsap.timeline();
+  // tl.to(flaskContainer, { x: +50, y: +50 });
+
+  // flask.dataset.dropped = "true";
+
   gsap.to(flask, {
-    x: 183,
-    y: 258,
     rotation: 100,
     duration: 3
   });
@@ -129,9 +133,9 @@ function animateFlask() {
     document.querySelector("#startingPoint").dataset.show = "true";
     toMorph("flaskSVG", "#startingPoint", "#pouringliquidOne", 1000);
     turnTheLid();
+    fillTheLamp();
     setTimeout(() => {
       document.querySelector("#pouringliquidOne").dataset.show = "true";
-      fillTheLamp();
       repeatingMorphing(
         "flaskSVG",
         "#pouringliquidOne",
@@ -166,7 +170,6 @@ function closeTheLampLid() {
 }
 
 function fillTheLamp() {
-  console.log("object");
   // THE LAMP LIQUID
   const oilLamp = document.querySelector("#theSquare");
   gsap.fromTo(
