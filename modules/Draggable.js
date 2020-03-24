@@ -4,14 +4,41 @@ import Snap from "snapsvg";
 
 // enable draggables to be dropped into this
 
-export function DraggElement() {
+export function DraggElement(moveForwards) {
   interact(".draggableItem").draggable({
     listeners: {
       // call this function on every dragmoveevent
       move: dragMoveListener
     }
   });
+
+  interact(".dropzone").dropzone({
+    accept: ".draggableItem",
+    // Require a 75% element overlap for a drop to be possible
+    overlap: 0.5,
+
+    ondragenter: function(event) {
+      // feedback the possibility of a drop
+      event.target.dataset.moving = "hovering";
+    },
+
+    ondragleave: function(event) {
+      // remove the drop feedback style
+      event.target.dataset.moving = "activeMoving";
+    },
+
+    ondrop: function(event) {
+      event.target.dataset.moving = "dropped";
+      AnimateDraggableObjects(moveForwards);
+      // interact(".draggableItem").unset();
+    },
+
+    ondropactivate: function(event) {
+      event.target.dataset.moving = "activeMoving";
+    }
+  });
 }
+
 function dragMoveListener(event) {
   const target = event.target;
   // keep the dragged position in the data-x/data-y attributes
@@ -27,47 +54,19 @@ function dragMoveListener(event) {
   target.setAttribute("data-y", y);
 }
 
-interact(".dropzone").dropzone({
-  accept: ".draggableItem",
-  // Require a 75% element overlap for a drop to be possible
-  overlap: 0.5,
-
-  ondragenter: function(event) {
-    // feedback the possibility of a drop
-    console.log(event);
-    event.target.dataset.moving = "hovering";
-  },
-
-  ondragleave: function(event) {
-    // remove the drop feedback style
-    event.target.dataset.moving = "activeMoving";
-  },
-
-  ondrop: function(event) {
-    event.target.dataset.moving = "dropped";
-    AnimateDraggableObjects();
-    interact(".draggableItem").unset();
-  },
-
-  ondropactivate: function(event) {
-    event.target.dataset.moving = "activeMoving";
-  }
-});
-
 // ANIMATIONS LEVEL 2
 
-function AnimateDraggableObjects() {
+function AnimateDraggableObjects(moveForwards) {
   const ImageContainerChaptervalue = document.querySelector(".ImageContainer")
     .dataset.chapter;
   if (ImageContainerChaptervalue === "lvl2-p2") {
-    console.log("object");
-    animateFlask();
+    AnimateFlask(moveForwards);
   } else if (ImageContainerChaptervalue === "lvl2-p3") {
-    animateLightingTheWick();
+    AnimateLightingTheWick(moveForwards);
   }
 }
 
-function animateLightingTheWick() {
+export function AnimateLightingTheWick(moveForwards) {
   const theMatch = document.querySelector(".draggableItem");
   const theMatchContainer = document.querySelector(".movableitemContainer");
   // theMatchContainer.dataset.droppedmatch = "true";
@@ -85,8 +84,12 @@ function animateLightingTheWick() {
         "#smallLight",
         "#lightStrokeLarge",
         1500,
-        true
+        true,
+        moveForwards
       );
+      setTimeout(() => {
+        moveForwards();
+      }, 2000);
     }
   });
 
@@ -113,7 +116,7 @@ function animateLightingTheWick() {
 }
 
 // THE FLASK ITEM
-function animateFlask() {
+export function AnimateFlask(moveForwards) {
   const flask = document.querySelector(".draggableItem");
   const flaskContainer = document.querySelector(".movableitemContainer");
   flaskContainer.dataset.dropped = "true";
@@ -141,7 +144,8 @@ function animateFlask() {
         "#pouringliquidOne",
         "#pouringLiquid2",
         1000,
-        flask
+        flask,
+        moveForwards
       );
     }, 700);
   }, 1000);
@@ -158,14 +162,19 @@ function turnTheLid() {
   });
 }
 
-function closeTheLampLid() {
+function closeTheLampLid(moveForwards) {
   const lampLid = document.querySelector("#lamp_lid");
 
   gsap.to(lampLid, {
     rotation: 0,
     transformOrigin: "bottom right",
     duration: 0.5,
-    ease: "bounce"
+    ease: "bounce",
+    onComplete: function() {
+      setTimeout(() => {
+        moveForwards();
+      }, 1000);
+    }
   });
 }
 
@@ -226,7 +235,8 @@ function repeatingMorphing(
   firstPath,
   pathToMorphto,
   duration,
-  infiniteRepeat
+  infiniteRepeat,
+  moveForwards
 ) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
@@ -259,7 +269,7 @@ function repeatingMorphing(
       firstElement.stop();
     }
     removeItemFromDisplay(".draggableItem");
-    closeTheLampLid();
+    closeTheLampLid(moveForwards);
   }, 4100);
   toNextPath();
 }

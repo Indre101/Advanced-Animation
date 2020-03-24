@@ -3,7 +3,6 @@ import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
 import { DraggElement } from "./modules/Draggable";
 import { gsap } from "gsap";
-import { AnimateColloredOilLamp } from "./modules/Draggable";
 
 let Stage = 0;
 let Part = 0;
@@ -34,11 +33,18 @@ async function moveForwards() {
   listen();
 }
 let clickFunc = function() {
-  DraggElement();
+  DraggElement(moveForwards);
   const level = document.querySelector(".ImageContainer").dataset.chapter;
-  console.log(level);
   if (level === "lvl1-p5") {
     activateAnimation("friction");
+  } else if (level === "lvl3-p1") {
+    setTimeout(() => {
+      document.querySelector(".Instructions").textContent =
+        "Click on the Light bulb to continue";
+      document
+        .querySelector("#LightBulbCirlce")
+        .addEventListener("click", moveForwards);
+    }, 5000);
   } else if (level != "lvl1-p5" && level != "lvl1-p3") {
     moveForwards();
   }
@@ -113,7 +119,6 @@ const dofriction = function() {
       duration: 0.2,
       x: -50
     });
-    console.log(count);
   } else if (count == 12) {
     moveForwards();
   } else {
@@ -215,6 +220,7 @@ function listen() {
   // element.forEach(e => {
   //   e.addEventListener("click", (e = clickFunc));
   // });
+
   setTimeout(() => {
     const element2 = document.querySelectorAll(".NOTmovableitemContainer");
     element2.forEach(e => {
