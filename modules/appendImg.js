@@ -31,7 +31,7 @@ async function createSvg(img, container) {
     : createNONContainer(parent);
   parent.appendChild(svg);
   container.appendChild(parent);
-  addAnimationToTheLampLid();
+  addAnimationsToElements();
 }
 
 function createDraggableContainer(createdSvg, parent, container, img) {
@@ -58,7 +58,7 @@ function createNONContainer(parent) {
 
 // ANIMATION PARTS
 
-function addAnimationToTheLampLid() {
+function addAnimationsToElements() {
   if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
     console.log(document.querySelector("#lamp_lid"));
@@ -66,7 +66,7 @@ function addAnimationToTheLampLid() {
     AnimateColloredOilLamp();
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
     console.log("object");
-    const switchElement = document.querySelector("#switchOutline");
+    const switchElement = document.querySelector("#switchPart");
     switchElement.addEventListener("click", clickedImage);
   }
 }
@@ -74,8 +74,6 @@ function addAnimationToTheLampLid() {
 // LEVEL THREE
 
 function clickedImage() {
-  console.log("imageClickde");
-
   const onBtn = document.querySelector("#oneSquare");
   const offBtn = document.querySelector("#squareSwitchOn");
   const lightsOne = document.querySelector("#Light-dashesGroupOne");

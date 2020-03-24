@@ -21,13 +21,15 @@
         <path d="M1151.92,625.41h-36.2a10.77,10.77,0,0,0-10.7,10.7h0a10.77,10.77,0,0,0,10.7,10.7H1152a10.77,10.77,0,0,0,10.7-10.7h0A10.86,10.86,0,0,0,1151.92,625.41Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
         <path d="M1082.62,478.21l-25.6,25.6a10.54,10.54,0,0,0,14.9,14.9l25.6-25.6a10.54,10.54,0,1,0-14.9-14.9Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
       </g>
-      <path id="switchOutline" d="M345.33,453.77A21.35,21.35,0,0,1,323.88,475L25.21,473.33A21.36,21.36,0,0,1,4,451.87L6.37,25.21A21.35,21.35,0,0,1,27.82,4L326.48,5.66A21.35,21.35,0,0,1,347.7,27.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
-      <polygon points="132.83 303.26 132.99 273.76 141.75 291.51 132.83 303.26" fill="#f2f2f2"/>
-      <g id="button">
-        <g id="switchbutton">
-          <rect x="80.97" y="88.31" width="186.92" height="283.23" rx="28.13" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
-          <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" rx="14.05" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
-          <rect id="squareSwitchOn" x="134.25" y="239.82" width="85.33" height="85.33" rx="13.4" stroke-width="8" stroke="#000" stroke-miterlimit="10" transform="translate(-106.55 457.83) rotate(-89.68)"/>
+      <g id="switchPart">
+        <path id="switchOutline" d="M345.33,453.77A21.35,21.35,0,0,1,323.88,475L25.21,473.33A21.36,21.36,0,0,1,4,451.87L6.37,25.21A21.35,21.35,0,0,1,27.82,4L326.48,5.66A21.35,21.35,0,0,1,347.7,27.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <polygon points="132.83 303.26 132.99 273.76 141.75 291.51 132.83 303.26" fill="#f2f2f2"/>
+        <g id="button">
+          <g id="switchbutton">
+            <rect x="80.97" y="88.31" width="186.92" height="283.23" rx="28.13" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" rx="14.05" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
+            <rect id="squareSwitchOn" x="134.25" y="239.82" width="85.33" height="85.33" rx="13.4" stroke-width="8" stroke="#000" stroke-miterlimit="10" transform="translate(-106.55 457.83) rotate(-89.68)"/>
+          </g>
         </g>
       </g>
       <circle cx="176.92" cy="47.5" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>

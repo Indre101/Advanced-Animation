@@ -98,3 +98,79 @@ svg:root {
   display: block;
   opacity: 1;
 }
+
+/* LEVEL THREE */
+
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(1) {
+  top: 60%;
+  width: 50%;
+}
+
+.ImageContainer[data-chapter="lvl3-p1"] .NOTmovableitemContainer:nth-child(2) {
+  left: 8%;
+  top: 35%;
+}
+
+#wire,
+#Light-dashesGroupOne,
+#Light-dashesGroupTwo {
+  fill: none;
+  opacity: 0;
+}
+
+#wire[data-show="true"] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 2s linear 1 forwards;
+  opacity: 0;
+}
+
+@keyframes dash {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+#Light-dashesGroupOne[data-show="true"] {
+  animation: blink 0.8s ease-in-out alternate infinite;
+  /* fill: #fff; */
+  opacity: 0;
+}
+
+#Light-dashesGroupOne[data-show="true"] path,
+#Light-dashesGroupTwo[data-show="true"] path {
+  animation: animateFill 0.5s ease-in-out infinite alternate;
+  fill: white;
+}
+
+@keyframes animateFill {
+  0% {
+    fill: white;
+  }
+  100% {
+    fill: #fffc55;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#Light-dashesGroupTwo[data-show="true"] {
+  /* fill: #fff; */
+  animation: blink 0.8s 0.8s ease-in-out alternate infinite;
+}
+
+#LightBulbCirlce[data-show="true"] {
+  animation: animateFill 0.5s ease-in-out 1 forwards;
+}
