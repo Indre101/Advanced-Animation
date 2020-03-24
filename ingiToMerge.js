@@ -183,6 +183,11 @@ function activateAnimation(whichOne) {
     setTimeout(() => {
       moveForwards();
     }, 3000);
+    setTimeout(() => {
+      activateAnimation("After");
+    }, 4000);
+
+    //find this
   } else if (whichOne == "After") {
     setTimeout(() => {
       gsap.to(`[data-name="stick"]`, {
