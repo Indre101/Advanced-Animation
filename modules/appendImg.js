@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import Snap from "snapsvg";
 import interact from "interactjs";
-import { gsap } from "gsap";
+
 export const AppendImg = data => {
   const ImageContainer = document.querySelector(".ImageContainer");
   gsap.to(ImageContainer, {
