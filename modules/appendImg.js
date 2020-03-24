@@ -78,7 +78,7 @@ function addAnimationsToElements() {
   if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
     console.log(document.querySelector("#lamp_lid"));
-  } else if (document.querySelector(".ImageContainer[data-chapter=lvl1-p4]")) {
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl2-p4]")) {
     AnimateColloredOilLamp();
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
     console.log("object");
