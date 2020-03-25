@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "Montesrat";
+  src: url("static/font/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Montesrat";
 }
 body {
   height: 100vh;
@@ -137,4 +143,103 @@ a {
 }
 .ImageContainer[data-chapter="lvl1-p5"] > div[data-name="firctionHands"] {
   top: 30%;
+}
+
+.ImageContainer[data-chapter="lvl1-p6"] > div[data-name="fire"] {
+  width: 200px;
+  top: 45%;
+  left: 47%;
+}
+
+#frontfire {
+  animation: fire1 3s ease-in-out infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+#midlefire {
+  animation: fire2 1.6s ease-in-out infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+#backfiree {
+  animation: fire3 2s ease-in-out infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+#Spark1 {
+  animation: fire4 3s ease-in-out infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+#Spark2 {
+  animation: fire5 3s ease-in-out infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+#Spark3 {
+  animation: fire6 3s 2s ease-in-out infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+@keyframes fire1 {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateY(10deg) rotateZ(10deg);
+  }
+  50% {
+    transform: rotateY(-10deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes fire2 {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateY(10deg) rotateZ(10deg);
+  }
+  50% {
+    transform: rotateY(-10deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes fire3 {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateY(10deg) rotateZ(10deg);
+  }
+  50% {
+    transform: rotateY(-10deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+}
+@keyframes fire4 {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+@keyframes fire5 {
+  to {
+    transform: translate(-500%, -500%);
+    opacity: 0;
+  }
+}
+@keyframes fire6 {
+  to {
+    transform: translate(500%, -500%);
+    opacity: 0;
+  }
 }

@@ -59,7 +59,10 @@
 
       {
         "id": "lvl1-p6",
-        "media": [{ "src": "endingOne.svg", "draggable": false }],
+        "media": [
+          { "src": "endscene.svg", "draggable": false },
+          { "src": "fire.svg", "draggable": false }
+        ],
         "textUpper": "Humans’ ability to control fire is among the most important technological advances in our evolutionary history.",
         "instruction": "Next"
       }
