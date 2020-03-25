@@ -81,8 +81,8 @@ function chapterAnimation() {
   if (container.dataset.chapter == "lvl1-p5") {
     setTimeout(() => {
       const camp = document.querySelector("#camp");
-      const girls = camp.querySelector("#Girls");
-      girls.setAttribute("fill", "none");
+      // const girls = camp.querySelector("#Girls");
+      // girls.setAttribute("fill", "none");
     }, 1500);
   }
 }
