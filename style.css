@@ -144,11 +144,15 @@ a {
 .ImageContainer[data-chapter="lvl1-p5"] > div[data-name="firctionHands"] {
   top: 30%;
 }
-
+.ImageContainer[data-chapter="lvl1-p6"] > div[data-name="camp"] {
+  z-index: 50;
+}
 .ImageContainer[data-chapter="lvl1-p6"] > div[data-name="fire"] {
+  z-index: 100;
   width: 200px;
   top: 45%;
   left: 47%;
+  fill: orange;
 }
 
 #frontfire {
