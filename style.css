@@ -17,7 +17,8 @@ body {
   padding-left: 5vw;
   padding-right: 5vw;
 }
-h3 {
+h3,
+a {
   font-size: 3vh;
 }
 .svgContainer {

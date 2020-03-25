@@ -174,3 +174,8 @@ svg:root {
 #LightBulbCirlce[data-show="true"] {
   animation: animateFill 0.5s ease-in-out 1 forwards;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
