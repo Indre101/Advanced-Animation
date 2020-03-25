@@ -48,7 +48,7 @@
       },
 
       {
-        "id": "lvl3-p3",
+        "id": "lvl3-p2",
         "media": [{ "src": "phoneman.svg", "draggable": false }],
         "textUpper": "Nowadays we have light wherever we go",
         "instruction": "Click here to restart"
