@@ -196,10 +196,6 @@ function activateAnimation(whichOne) {
 }
 
 function listen() {
-  // const element = document.querySelectorAll(".click");
-  // element.forEach(e => {
-  //   e.addEventListener("click", (e = clickFunc));
-  // });
   setTimeout(() => {
     const element2 = document.querySelectorAll(".NOTmovableitemContainer");
     element2.forEach(e => {
