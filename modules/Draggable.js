@@ -273,7 +273,6 @@ function repeatingMorphing(
 }
 
 function removeItemFromDisplay(itemIdOrClass) {
-  console.log("remove object");
   const item = document.querySelector(itemIdOrClass);
   gsap.to(item, { opacity: 0, duration: 0.3, ease: "easeout" });
 }

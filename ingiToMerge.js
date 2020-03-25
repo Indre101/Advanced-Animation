@@ -40,7 +40,6 @@ async function moveForwards() {
 let clickFunc = function() {
   DraggElement();
   const level = document.querySelector(".ImageContainer").dataset.chapter;
-  console.log(level);
   if (level === "lvl1-p5") {
   } else if (level != "lvl1-p5" && level != "lvl1-p3") {
     moveForwards();
@@ -98,7 +97,6 @@ const dofriction = function() {
       duration: 0.2,
       x: -50
     });
-    console.log(count);
   } else if (count == 12) {
     moveForwards();
   } else {

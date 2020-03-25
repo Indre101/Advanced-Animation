@@ -22,14 +22,12 @@ async function moveForwards() {
     if (Part + 1 < where[0].parts.length) {
       Part++;
       datacheck();
-      console.log("object");
     } else if (Stage == 3 && Part + 1 == where[0].parts.length) {
       document.querySelector(".Instructions").textContent = "";
     } else {
       Part = 0;
       Stage++;
       datacheck();
-      console.log("object");
     }
   }, 50);
   chapterAnimation();
@@ -41,11 +39,10 @@ let clickFunc = function() {
   if (level === "lvl1-p5") {
     activateAnimation("friction");
   } else if (level === "lvl3-p3") {
-    console.log("last part");
   } else if (level === "lvl3-p1") {
     setTimeout(() => {
       document.querySelector(".Instructions").textContent =
-        "Click on the Light bulb to continue";
+        "Tap on the light bulb to continue";
       document
         .querySelector("#LightBulbCirlce")
         .addEventListener("click", moveForwards);
@@ -57,7 +54,6 @@ let clickFunc = function() {
     level !== "lvl2-p3" &&
     level !== "lvl3-p3"
   ) {
-    console.log("another third if");
     moveForwards();
   }
   // if (this.dataset.what == "bottom" || this.dataset.what == "[img]") {

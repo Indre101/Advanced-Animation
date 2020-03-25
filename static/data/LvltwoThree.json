@@ -7,7 +7,7 @@
         "id": "lvl2-p1",
         "media": [{ "src": "oilLamp.svg", "draggable": false }],
         "textUpper": "The use of oil lamps began thousands of years ago and continues to this day although not commonly anymore.",
-        "instruction": "Tap on the lamp to open it"
+        "instruction": "Tap on the lamp to continue"
       },
       {
         "id": "lvl2-p2",
@@ -51,7 +51,7 @@
         "id": "lvl3-p2",
         "media": [{ "src": "phoneman.svg", "draggable": false }],
         "textUpper": "Nowadays we have light wherever we go",
-        "instruction": "Click here to restart"
+        "instruction": "Tap here to restart"
       }
     ]
   }
