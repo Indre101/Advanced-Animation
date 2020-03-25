@@ -48,6 +48,8 @@ let clickFunc = function() {
         .querySelector("#LightBulbCirlce")
         .addEventListener("click", moveForwards);
     }, 5000);
+  } else if (level === "lvl3-p3") {
+    console.log("last part");
   } else if (
     level != "lvl1-p5" &&
     level != "lvl1-p3" &&

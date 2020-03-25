@@ -82,6 +82,14 @@ function addAnimationsToElements() {
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
     const switchElement = document.querySelector("#switchPart");
     switchElement.addEventListener("click", clickedImage);
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p3]")) {
+    console.log("third last part");
+
+    const e = document.querySelector(".Instructions");
+    const d = document.createElement("a");
+    d.setAttribute("href", "index.html");
+    d.textContent = e.textContent;
+    e.parentNode.replaceChild(d, e);
   }
 }
 

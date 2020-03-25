@@ -143,12 +143,11 @@ export function AnimateFlask(moveForwards) {
         "flaskSVG",
         "#pouringliquidOne",
         "#pouringLiquid2",
-        1000,
-        flask
+        800,
+        flask,
+        moveForwards
       );
-
-      moveForwards();
-    }, 3000);
+    }, 1000);
   }, 1000);
 }
 
@@ -231,7 +230,8 @@ function repeatingMorphing(
   firstPath,
   pathToMorphto,
   duration,
-  infiniteRepeat
+  infiniteRepeat,
+  moveForwards
 ) {
   const svg = document.querySelector(svgId);
   const s = Snap(svg);
@@ -263,13 +263,17 @@ function repeatingMorphing(
     } else {
       firstElement.stop();
       closeTheLampLid();
+      removeItemFromDisplay(".draggableItem");
+      setTimeout(() => {
+        moveForwards();
+      }, 1000);
     }
-    removeItemFromDisplay(".draggableItem");
-  }, 4100);
+  }, 4000);
   toNextPath();
 }
 
 function removeItemFromDisplay(itemIdOrClass) {
+  console.log("remove object");
   const item = document.querySelector(itemIdOrClass);
   gsap.to(item, { opacity: 0, duration: 0.3, ease: "easeout" });
 }
