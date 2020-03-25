@@ -79,10 +79,7 @@ function addAnimationsToElements() {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl2-p4]")) {
     AnimateColloredOilLamp();
-  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
-    const switchElement = document.querySelector("#switchPart");
-    switchElement.addEventListener("click", clickedImage);
-  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p3]")) {
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p2]")) {
     console.log("third last part");
     const svgpaths = document.querySelectorAll("path");
     svgpaths.forEach(pathItem => {
@@ -95,6 +92,9 @@ function addAnimationsToElements() {
     d.setAttribute("href", "index.html");
     d.textContent = e.textContent;
     e.parentNode.replaceChild(d, e);
+  } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
+    const switchElement = document.querySelector("#switchPart");
+    switchElement.addEventListener("click", clickedImage);
   }
 }
 
