@@ -84,6 +84,11 @@ function addAnimationsToElements() {
     switchElement.addEventListener("click", clickedImage);
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p3]")) {
     console.log("third last part");
+    const svgpaths = document.querySelectorAll("path");
+    svgpaths.forEach(pathItem => {
+      pathItem.setAttribute("pathLength", 1);
+      pathItem.dataset.show = "true";
+    });
 
     const e = document.querySelector(".Instructions");
     const d = document.createElement("a");

@@ -179,3 +179,35 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.NOTmovableitemContainer[data-name="phoneman"] {
+  width: 80%;
+}
+
+.NOTmovableitemContainer[data-name="phoneman"] svg path[data-show="true"] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 1s linear 1 forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#lightSpectre {
+  animation: rotateLight 0.5s 1s linear alternate infinite;
+}
+
+@keyframes rotateLight {
+  0% {
+    transform: rotateY(-60deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
