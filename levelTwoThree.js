@@ -1,49 +1,60 @@
-import { GetJsonData } from "./modules/ImportJson.js";
+import { GetJsonDataLevelTwoThree } from "./modules/importLevelTwoThree.js";
 import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
 import { DraggElement } from "./modules/Draggable";
 import { gsap } from "gsap";
-import { AnimateColloredOilLamp } from "./modules/Draggable";
 
 let Stage = 0;
 let Part = 0;
 document.addEventListener("DOMContentLoaded", datacheck(0, 0));
 document.addEventListener("DOMContentLoaded", listen);
-async function datacheck(Stages, Parts) {
-  const data = await GetJsonData(Stage, Part);
+async function datacheck() {
+  const data = await GetJsonDataLevelTwoThree(Stage, Part);
   AppendText(data);
   AppendImg(data);
   activateAnimation();
 }
+
+let clicked = 0;
 async function moveForwards() {
-  let where = await GetJsonData(Stage);
+  let where = await GetJsonDataLevelTwoThree(Stage);
   setTimeout(() => {
-    if (Stage === 1 && Part === 5) {
-      window.open("./index-levelTwoThree.html", "_self");
-      Stage = 0;
-      Part = 0;
-    } else if (Part + 1 < where[0].parts.length) {
+    if (Part + 1 < where[0].parts.length) {
       Part++;
       datacheck();
+      console.log("object");
     } else if (Stage == 3 && Part + 1 == where[0].parts.length) {
       document.querySelector(".Instructions").textContent = "";
     } else {
       Part = 0;
       Stage++;
-
       datacheck();
+      console.log("object");
     }
   }, 50);
   chapterAnimation();
   listen();
 }
 let clickFunc = function() {
-  DraggElement();
+  DraggElement(moveForwards);
   const level = document.querySelector(".ImageContainer").dataset.chapter;
-  console.log(level);
   if (level === "lvl1-p5") {
     activateAnimation("friction");
-  } else if (level != "lvl1-p5" && level != "lvl1-p3") {
+  } else if (level === "lvl3-p1") {
+    setTimeout(() => {
+      document.querySelector(".Instructions").textContent =
+        "Click on the Light bulb to continue";
+      document
+        .querySelector("#LightBulbCirlce")
+        .addEventListener("click", moveForwards);
+    }, 5000);
+  } else if (
+    level != "lvl1-p5" &&
+    level != "lvl1-p3" &&
+    level !== "lvl2-p2" &&
+    level !== "lvl2-p3"
+  ) {
+    console.log("another third if");
     moveForwards();
   }
   // if (this.dataset.what == "bottom" || this.dataset.what == "[img]") {
@@ -117,7 +128,6 @@ const dofriction = function() {
       duration: 0.2,
       x: -50
     });
-    console.log(count);
   } else if (count == 12) {
     moveForwards();
   } else {
@@ -191,7 +201,7 @@ function activateAnimation(whichOne) {
     });
     setTimeout(() => {
       moveForwards();
-    }, 3000);
+    }, 2000);
     setTimeout(() => {
       activateAnimation("After");
     }, 4000);
@@ -219,6 +229,7 @@ function listen() {
   // element.forEach(e => {
   //   e.addEventListener("click", (e = clickFunc));
   // });
+
   setTimeout(() => {
     const element2 = document.querySelectorAll(".NOTmovableitemContainer");
     element2.forEach(e => {

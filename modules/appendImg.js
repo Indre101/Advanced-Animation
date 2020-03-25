@@ -77,11 +77,9 @@ function createNONContainer(parent, addName) {
 function addAnimationsToElements() {
   if (document.querySelector(".ImageContainer[data-chapter=lvl2-p1]")) {
     document.querySelector("#lamp_lid").dataset.lifted = "true";
-    console.log(document.querySelector("#lamp_lid"));
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl2-p4]")) {
     AnimateColloredOilLamp();
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p1]")) {
-    console.log("object");
     const switchElement = document.querySelector("#switchPart");
     switchElement.addEventListener("click", clickedImage);
   }
@@ -89,7 +87,7 @@ function addAnimationsToElements() {
 
 // LEVEL THREE
 
-function clickedImage() {
+export function clickedImage() {
   const onBtn = document.querySelector("#oneSquare");
   const offBtn = document.querySelector("#squareSwitchOn");
   const lightsOne = document.querySelector("#Light-dashesGroupOne");
@@ -101,7 +99,6 @@ function clickedImage() {
 
   setTimeout(() => {
     document.querySelector("#wire").dataset.show = "true";
-    console.log(document.querySelector("#wire"));
     setTimeout(() => {
       lightsOne.dataset.show = "true";
       lightsTwo.dataset.show = "true";
@@ -112,8 +109,7 @@ function clickedImage() {
 
 // LEVELTWO
 
-export function AnimateColloredOilLamp() {
-  console.log("object");
+function AnimateColloredOilLamp() {
   repeatingMorphing(
     "#oiLampColorised",
     "#smallLight",
