@@ -95,7 +95,7 @@
         "instruction": "Drag the stick to the lamp’s wick to light the lamp"
       },
       {
-        "id": "lvl1-p4",
+        "id": "lvl2-p4",
         "media": [{ "src": "oilLampColoredLight.svg", "draggable": false }],
         "textUpper": "Oil lamps burned cleaner, with less smoke, than candles and other sources of light before electricity.",
         "instruction": "Next"

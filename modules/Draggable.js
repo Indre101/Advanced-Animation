@@ -147,10 +147,8 @@ export function AnimateFlask(moveForwards) {
         flask
       );
 
-      setTimeout(() => {
-        moveForwards();
-      }, 5000);
-    }, 700);
+      moveForwards();
+    }, 3000);
   }, 1000);
 }
 

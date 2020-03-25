@@ -22,8 +22,8 @@
     "parcel-plugin-static-files-copy": "2.3.1"
   },
   "scripts": {
-    "start": "parcel *.html --open",
-    "build": "parcel build *.html --public-url ./"
+    "start": "npm run build && parcel index.html --open",
+    "build": "parcel build *.html  --public-url ./"
   },
   "repository": {
     "type": "git",
