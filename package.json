@@ -18,13 +18,15 @@
     "@babel/polyfill": "7.8.7",
     "@babel/runtime": "7.8.7",
     "@interactjs/types": "1.9.7",
+    "gh-pages": "^2.2.0",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.3.1",
     "sass": "^1.26.3"
   },
   "scripts": {
     "start": "npm run build && parcel index.html --open",
-    "build": "parcel build *.html  --public-url ./"
+    "build": "parcel build *.html  --public-url ./",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -35,5 +37,5 @@
   "bugs": {
     "url": "https://github.com/Indre101/Advanced-animation/issues"
   },
-  "homepage": "https://github.com/Indre101/Advanced-animation#readme"
+  "homepage": "https://github.com/Indre101/Advanced-animation/"
 }
