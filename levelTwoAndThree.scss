@@ -13,11 +13,6 @@ svg:root {
   }
 }
 
-.ImageContainer[data-chapter="lvl2-p2"],
-.ImageContainer[data-chapter="lvl2-p3"] {
-  --width: 200px;
-}
-
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer,
 .ImageContainer[data-chapter="lvl2-p3"] .movableitemContainer {
   /* animation: transformLvl2 0.5s ease-in-out forwards 1; */
@@ -68,18 +63,12 @@ svg:root {
 }
 
 .ImageContainer[data-chapter="lvl2-p2"] .dropzone svg,
-.ImageContainer[data-chapter="lvl2-p3"] svg {
-  width: var(----width);
-}
-
+.ImageContainer[data-chapter="lvl2-p3"] svg,
 .ImageContainer[data-chapter="lvl2-p2"] .NOTmovableitemContainer svg,
-.ImageContainer[data-chapter="lvl2-p3"] svg {
-  width: var(----width);
-}
-
+.ImageContainer[data-chapter="lvl2-p3"] svg,
 .ImageContainer[data-chapter="lvl2-p2"] .movableitemContainer svg,
 .ImageContainer[data-chapter="lvl2-p3"] svg {
-  width: var(----width);
+  width: 200px;
 }
 
 #ShiftedLiquid,
