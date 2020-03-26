@@ -1,3 +1,5 @@
+import "./style.scss";
+import "./levelTwoAndThree.scss";
 import { GetJsonDataLevelTwoThree } from "./modules/importLevelTwoThree.js";
 import { AppendText } from "./modules/appendText.js";
 import { AppendImg } from "./modules/appendImg.js";
