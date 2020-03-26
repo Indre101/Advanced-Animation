@@ -181,17 +181,3 @@ function repeatingMorphing(svgId, firstPath, pathToMorphto, duration) {
   };
   toNextPath();
 }
-
-function toMorph(svgId, firstPath, pathToMorphto, duration) {
-  const svg = document.querySelector(svgId);
-  const s = Snap(svg);
-  const firstElement = Snap.select(firstPath);
-  const secondElement = Snap.select(pathToMorphto);
-  const firstElementPoints = firstElement.node.getAttribute("d");
-  const secondElementPoints = secondElement.node.getAttribute("d");
-
-  const morphing = function() {
-    firstElement.animate({ d: secondElementPoints }, duration, mina.easeout);
-  };
-  morphing();
-}
