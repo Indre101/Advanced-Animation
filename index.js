@@ -19,7 +19,7 @@ async function moveForwards() {
   let where = await GetJsonData(Stage);
   setTimeout(() => {
     if (Stage === 1 && Part === 5) {
-      window.open("./index-levelTwoThree.html", "_self");
+      window.open("./nextLevels.html", "_self");
       Stage = 0;
       Part = 0;
     } else if (Part + 1 < where[0].parts.length) {

@@ -170,7 +170,9 @@ a {
 }
 
 .NOTmovableitemContainer[data-name="phoneman"] {
-  width: 80%;
+  width: 700px !important;
+  left: 65% !important;
+  top: 40% !important;
 }
 
 .NOTmovableitemContainer[data-name="phoneman"] svg path[data-show="true"] {
@@ -205,5 +207,17 @@ a {
   100% {
     opacity: 1;
     transform: rotate(0);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body
+    > .StoryContainer
+    > article
+    > .ImageContainer[data-chapter="lvl3-p2"]
+    > div[data-name="phoneman"] {
+    width: 700px !important;
+    left: 90% !important;
+    top: 40% !important;
   }
 }
