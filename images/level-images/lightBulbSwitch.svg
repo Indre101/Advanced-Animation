@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1166.72 1097.55">
+  <title>Asset 2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Lightbulb">
+      <path id="LightBulbCirlce" d="M998.32,804.61c6.4-21.3,19.2-40.5,36.3-55.5a145.79,145.79,0,0,0,52.3-112c0-83.2-69.3-151.5-154.7-147.2-75.7,3.2-137.6,67.2-139.7,142.9-1.1,47,19.2,88.6,52.2,116.3a114.25,114.25,0,0,1,37.3,55.5Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <path id="LightBulbWire" d="M922,802.41h11.8l-52.7-193.8H885a25.94,25.94,0,0,0,18.4-7.8,12.8,12.8,0,0,1,18.4,0,22.64,22.64,0,0,0,34.2,0,12,12,0,0,1,9.2-3.9,14.28,14.28,0,0,1,9.2,3.9c5.3,5.2,10.5,7.8,18.4,7.8h3.9l-51,193.8h11.8l54-202.9c0-2.6,0-5.2-2.6-6.5a5.88,5.88,0,0,0-6.6,1.3c-2.6,2.6-5.3,3.9-7.9,3.9-3.9,0-6.6-1.3-10.5-3.9-5.3-5.2-10.5-7.8-17.1-7.8s-11.8,2.6-17.1,7.8a12.8,12.8,0,0,1-18.4,0c-3.9-5.2-10.5-7.8-17.1-7.8h0c-6.6,0-13.2,2.6-17.1,7.8a15,15,0,0,1-10.5,3.9c-2.6,0-6.6-1.3-7.9-3.9a5.83,5.83,0,0,0-6.6-1.3c-2.6,1.3-3.9,3.9-2.6,6.5Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <g id="Patron">
+        <path d="M906.62,902.71a36.2,36.2,0,0,0,33.1,22.4c14.9,0,27.7-9.6,33.1-22.4Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M979.12,903.81h-77.9a19.08,19.08,0,0,1-19.2-19.2v-81.1h116.3v81.1A19.14,19.14,0,0,1,979.12,903.81Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      </g>
+      <g id="Lightbulb-core">
+        <path d="M997.32,844H882.12a11.78,11.78,0,0,1-11.7-11.7h0a11.78,11.78,0,0,1,11.7-11.7h115.2a11.78,11.78,0,0,1,11.7,11.7h0A11.78,11.78,0,0,1,997.32,844Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M997.32,881.41H882.12a11.78,11.78,0,0,1-11.7-11.7h0a11.78,11.78,0,0,1,11.7-11.7h115.2a11.78,11.78,0,0,1,11.7,11.7h0A11.85,11.85,0,0,1,997.32,881.41Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      </g>
+      <g id="Light-dashesGroupOne">
+        <path d="M939.72,413.11a10.77,10.77,0,0,0-10.7,10.7v36.3a10.77,10.77,0,0,0,10.7,10.7c6.4,0,10.7-4.3,10.7-10.7v-36.3A10.83,10.83,0,0,0,939.72,413.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M796.72,478.21a10.54,10.54,0,1,0-14.9,14.9l25.6,25.6a10.54,10.54,0,0,0,14.9-14.9Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M763.72,625.41h-36.3a10.77,10.77,0,0,0-10.7,10.7h0a10.77,10.77,0,0,0,10.7,10.7h36.3a10.77,10.77,0,0,0,10.7-10.7h0C774.32,630.71,769,625.41,763.72,625.41Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M807.42,753.41,781.82,779a10.54,10.54,0,1,0,14.9,14.9l25.6-25.6a10.54,10.54,0,1,0-14.9-14.9Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M1071.92,753.41a10.54,10.54,0,1,0-14.9,14.9l25.6,25.6a10.54,10.54,0,1,0,14.9-14.9Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M1151.92,625.41h-36.2a10.77,10.77,0,0,0-10.7,10.7h0a10.77,10.77,0,0,0,10.7,10.7H1152a10.77,10.77,0,0,0,10.7-10.7h0A10.86,10.86,0,0,0,1151.92,625.41Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M1082.62,478.21l-25.6,25.6a10.54,10.54,0,0,0,14.9,14.9l25.6-25.6a10.54,10.54,0,1,0-14.9-14.9Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      </g>
+      <g id="switchPart">
+        <path id="switchOutline" d="M345.33,453.77A21.35,21.35,0,0,1,323.88,475L25.21,473.33A21.36,21.36,0,0,1,4,451.87L6.37,25.21A21.35,21.35,0,0,1,27.82,4L326.48,5.66A21.35,21.35,0,0,1,347.7,27.11Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <polygon points="132.83 303.26 132.99 273.76 141.75 291.51 132.83 303.26" fill="#f2f2f2"/>
+        <g id="button">
+          <g id="switchbutton">
+            <rect x="80.97" y="88.31" width="186.92" height="283.23" rx="28.13" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+            <rect id="oneSquare" x="133.54" y="132.83" width="85.33" height="85.33" rx="14.05" stroke-width="8" fill="#fff" stroke="#000" stroke-miterlimit="10" transform="translate(-0.27 350.72) rotate(-89.68)"/>
+            <rect id="squareSwitchOn" x="134.25" y="239.82" width="85.33" height="85.33" rx="13.4" stroke-width="8" stroke="#000" stroke-miterlimit="10" transform="translate(-106.55 457.83) rotate(-89.68)"/>
+          </g>
+        </g>
+      </g>
+      <circle cx="176.92" cy="47.5" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <circle cx="174.78" cy="431.49" r="21.33" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      <text transform="translate(142.82 298.13)" font-size="39" fill="#fff" font-family="MyriadPro-Regular, Myriad Pro">OFF</text>
+      <text transform="translate(146.84 185.11)" font-size="39" fill="#fff" font-family="MyriadPro-Regular, Myriad Pro">ON</text>
+      <path id="wire" d="M174.43 470.81 175.85 1093.55 935.22 1093.55 939.72 925.11" pathLength="1" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+
+      <g id="Light-dashesGroupTwo">
+        <path d="M1031,432.5a10.78,10.78,0,0,0-14.09,5.53l-14.52,33.27a10.78,10.78,0,0,0,5.53,14.09c5.87,2.56,11.53.34,14.09-5.53l14.51-33.27A10.84,10.84,0,0,0,1031,432.5Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M873.9,435a10.54,10.54,0,0,0-19.62,7.69l13.23,33.71a10.53,10.53,0,0,0,19.61-7.7Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M784.78,556.71l-33.27-14.52a10.76,10.76,0,0,0-14.08,5.53h0A10.76,10.76,0,0,0,743,561.8l33.28,14.52a10.76,10.76,0,0,0,14.08-5.53h0C792.38,565.8,789.64,558.83,784.78,556.71Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M773.65,691.5,740,704.73a10.53,10.53,0,1,0,7.7,19.61l33.7-13.22a10.54,10.54,0,1,0-7.7-19.62Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M1140.59,712l-33.18-14.48a10.75,10.75,0,0,0-14.08,5.53h0a10.77,10.77,0,0,0,5.52,14.09l33.27,14.51a10.77,10.77,0,0,0,14.09-5.53h0A10.85,10.85,0,0,0,1140.59,712Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+        <path d="M1135.94,549.32l-33.7,13.22a10.54,10.54,0,1,0,7.7,19.62l33.7-13.23a10.53,10.53,0,1,0-7.7-19.61Z" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="8"/>
+      </g>
+    </g>
+  </g>
+</svg>
