@@ -80,7 +80,6 @@ function addAnimationsToElements() {
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl2-p4]")) {
     AnimateColloredOilLamp();
   } else if (document.querySelector(".ImageContainer[data-chapter=lvl3-p2]")) {
-    console.log("third last part");
     const svgpaths = document.querySelectorAll("path");
     svgpaths.forEach(pathItem => {
       pathItem.setAttribute("pathLength", 1);

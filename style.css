@@ -2,7 +2,9 @@
   font-family: "Montesrat";
   src: url("static/font/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
-
+body {
+  overflow: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -158,15 +160,7 @@ h3[data-what="bottom"] {
   left: 47%;
   fill: orange;
 }
-body
-  > .StoryContainer
-  > article
-  > .ImageContainer[data-chapter="lvl3-p2"]
-  > div[data-name="phoneman"] {
-  width: 700px !important;
-  left: 90% !important;
-  top: 40% !important;
-}
+
 #frontfire {
   animation: fire1 3s ease-in-out infinite alternate;
   transform-origin: bottom;
